@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "concurrently": "^6.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -40,11 +41,10 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mogoose": "0.0.1-security",
+    "mongoose": "^5.11.14",
     "nodemon": "^2.0.8",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^13.6.0"
   }
-  
 }
