@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const db = require('./config/key').mongoURI;
 const users = require("./routes/api/users");
 const books = require("./routes/api/books");
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/books", books);
