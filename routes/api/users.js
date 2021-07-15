@@ -1,9 +1,14 @@
 const express = require("express");
-const router = express.Router();
+const router = express.Router();// router object off of router
 const bcrypt = require('bcryptjs');
 const User = require('../../config/models/User');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+//where we add routes
+
+//tester route
+router.get("/test", (req, res) => {
+  res.json({ msg: "This is the users route" });
+});
 
 router.post('/register', (req, res) => {
   // Check to make sure nobody has already registered with a duplicate email
