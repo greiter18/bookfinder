@@ -5,7 +5,7 @@ const db = require('./config/keys').mongoURI; // connects to our database
 const users = require("./routes/api/users");
 const books = require("./routes/api/books");
 const bodyParser = require('body-parser'); // used for postman
-
+const passport = require("passport");
 const User = require('./config/models/User');
 
 mongoose
@@ -15,6 +15,9 @@ mongoose
 
 app.use(bodyParser.urlencoded({ extended: false })); // respond to requests from postman
 app.use(bodyParser.json());
+
+app.use(passport.initialize());
+require("./config/passport")(passport);
 
 app.get("/", (req, res) => {
   res.send("Hello the one and only Gabriel Reiter")})
