@@ -17,6 +17,10 @@ const BookSchema = new Schema({
   link: {
     type: string,
     required: true
+  },
+  published: {
+    type: integer,
+    required: true 
   }
 });
 
