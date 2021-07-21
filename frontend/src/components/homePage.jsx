@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import axios from "axios";
 
+
 const HomePage = () => {
   const [book, setBook] = useState('');
+  const [bookList, setBookList] = useState([])
 
   const handleChange = () => {
-    console.log('book-----------',book)
     return (e) => {
       e.preventDefault();
       setBook(e.target.value)
@@ -17,10 +18,18 @@ const HomePage = () => {
     findBooks(book)
       .then((response) => {
         console.log(response)
-        for (var i = 0; i < response.data.items.length; i++) {
-        var item = response.data.items[i];
-          document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
-      }
+        //
+        setBookList(response.data.items)
+        // (book => {
+        //   return <BookIndexItem book={book.volumeInfo} key={book.id} />
+        // })
+        // for (var i = 0; i < response.data.items.length; i++) {
+        // let item = response.data.items[i];
+        // //let items = response.data.items[i];
+        //   document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+        //   document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.authors;
+        //   document.getElementById("content").innerHTML += "<br>" + `<img src=${item.volumeInfo.imageLinks.thumbnail}/>`; 
+      //}
     }
       )
   }
@@ -30,14 +39,10 @@ const HomePage = () => {
     return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${newBooks}`)
   }
 
-  // function handleResponse(response) {
-  //   for (var i = 0; i < response.items.length; i++) {
-  //     var item = response.items[i];
-  //     // in production code, item.text should have the HTML entities escaped.
-  //     document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
-  //    // https://www.googleapis.com/books/v1/volumes?q=
-  //   }
-  // }
+  const list = bookList.map(book => {
+    // return <BookIndexItem book={book.volumeInfo} key={book.id} />
+    return <h1>{book.volumeInfo.title}</h1>
+  }) 
 
   return(
     <div>
@@ -47,8 +52,9 @@ const HomePage = () => {
         <input type="text" onChange={handleChange()}/>
         <button>Find Book</button>
       </form>
-      <div id="content"></div>
-      
+      <div id="content">
+        {list}
+      </div>
     </div>
   )
 }
