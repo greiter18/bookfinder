@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import BookIndexItem from "./book_index_item";
+import Pagination from "./pagination";
 
 const HomePage = () => {
 	const [book, setBook] = useState("");
 	const [bookList, setBookList] = useState([]);
+	const [totalBooks, setTotalBooks] = useState(0);
+	const [totalBooksShown, setTotalBooksShown] = useState(10);
+	const [currentPage, setCurrentPage] = useState(0);
 
 	const handleChange = () => {
 		return (e) => {
@@ -13,12 +17,20 @@ const HomePage = () => {
 		};
 	};
 
+	const findBooks = (book) => {
+		let newBooks = book.split(" ").join("+");
+		return axios.get(
+			`https://www.googleapis.com/books/v1/volumes?q=${newBooks}&startIndex=${currentPage}&maxResults=${totalBooksShown}`
+		);
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		findBooks(book).then((response) => {
 			console.log(response);
 			//
 			setBookList(response.data.items);
+			setTotalBooks(response.data.totalItems);
 			// (book => {
 			//   return <BookIndexItem book={book.volumeInfo} key={book.id} />
 			// })
@@ -30,13 +42,6 @@ const HomePage = () => {
 			//   document.getElementById("content").innerHTML += "<br>" + `<img src=${item.volumeInfo.imageLinks.thumbnail}/>`;
 			//}
 		});
-	};
-
-	const findBooks = (book) => {
-		let newBooks = book.split(" ").join("+");
-		return axios.get(
-			`https://www.googleapis.com/books/v1/volumes?q=${newBooks}`
-		);
 	};
 
 	const list = bookList.map((book) => {
@@ -53,6 +58,8 @@ const HomePage = () => {
 				<button>Find Book</button>
 			</form>
 			<div id="content">{list}</div>
+
+			<Pagination data={totalBooks} dataLimit={totalBooksShown} />
 		</div>
 	);
 };
