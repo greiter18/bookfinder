@@ -7,5 +7,6 @@ Author's name
 Image links
 Info links
 
+~Search results keep stacking instead of overwriting~
 
-Search results keep stacking instead of overwriting
+Book index item
