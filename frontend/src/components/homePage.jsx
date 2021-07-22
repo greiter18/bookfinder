@@ -28,25 +28,13 @@ const HomePage = () => {
 		e.preventDefault();
 		findBooks(book).then((response) => {
 			console.log(response);
-			//
 			setBookList(response.data.items);
 			setTotalBooks(response.data.totalItems);
-			// (book => {
-			//   return <BookIndexItem book={book.volumeInfo} key={book.id} />
-			// })
-			// for (var i = 0; i < response.data.items.length; i++) {
-			// let item = response.data.items[i];
-			// //let items = response.data.items[i];
-			//   document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
-			//   document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.authors;
-			//   document.getElementById("content").innerHTML += "<br>" + `<img src=${item.volumeInfo.imageLinks.thumbnail}/>`;
-			//}
 		});
 	};
 
 	const list = bookList.map((book) => {
 		return <BookIndexItem book={book.volumeInfo} key={book.id} />;
-		// return <h1>{book.volumeInfo.title}</h1>
 	});
 
 	return (
@@ -58,7 +46,6 @@ const HomePage = () => {
 				<button>Find Book</button>
 			</form>
 			<div id="content">{list}</div>
-
 			<Pagination data={totalBooks} dataLimit={totalBooksShown} />
 		</div>
 	);

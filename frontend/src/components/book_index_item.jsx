@@ -5,7 +5,7 @@ const BookIndexItem = ({ book }) => {
 
 	return (
 		<div className="book_item">
-			<h1>Book #{book.id}</h1>
+			{/* <h1>Book #{book.id}</h1> */}
 			<h2>{book.title}</h2>
 			<h3>Author(s): {authors}</h3>
 			<a href={book.infoLink} target="_blank" rel="noopener noreferrer">
