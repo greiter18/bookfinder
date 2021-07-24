@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from "axios";
 import BookIndexItem from "./book_index_item";
 import Pagination from "./pagination";
+import NavBar from './navBar';
 
 const HomePage = () => {
 	const [book, setBook] = useState("");
@@ -10,11 +11,14 @@ const HomePage = () => {
 	const [totalBooksShown, setTotalBooksShown] = useState(10);
 	const [currentPage, setCurrentPage] = useState(0);
 
-	const handleChange = () => {
-		return (e) => {
-			e.preventDefault();
+	// const handleChange = () => {
+	// 	return (e) => {
+	// 		e.preventDefault();
+	// 		setBook(e.target.value);
+	// 	};
+	// };
+	const handleChange = (e) => {
 			setBook(e.target.value);
-		};
 	};
 
 	const findBooks = (book) => {
@@ -39,10 +43,11 @@ const HomePage = () => {
 
 	return (
 		<div>
+      <NavBar/>
 			<h1>Bookfinder</h1>
 			<form onSubmit={handleSubmit}>
 				What book do you want
-				<input type="text" onChange={handleChange()} />
+				<input type="text" onChange={handleChange} />
 				<button>Find Book</button>
 			</form>
 			<div id="content">{list}</div>
