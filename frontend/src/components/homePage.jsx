@@ -37,7 +37,7 @@ const HomePage = () => {
 
 	return (
 		<div>
-      <NavBar/>
+      {/* <NavBar/> */}
 			<h1>Bookfinder</h1>
 			<form onSubmit={handleSubmit}>
 				What book do you want

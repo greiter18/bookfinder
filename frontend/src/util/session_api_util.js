@@ -1,5 +1,9 @@
-// import axios from 'axios';
+import axios from 'axios';
 
-// export const logout = (user) => (
-//   axios.delete(`api/session`, user)
-// );
+export const setAuthToken = token => {
+  if (token) {
+    axios.defaults.headers.common['Authorization'] = token;
+  } else {
+    delete axios.defaults.headers.common['Authorization'];
+  }
+};
