@@ -11,14 +11,8 @@ const HomePage = () => {
 	const [totalBooksShown, setTotalBooksShown] = useState(10);
 	const [currentPage, setCurrentPage] = useState(0);
 
-	// const handleChange = () => {
-	// 	return (e) => {
-	// 		e.preventDefault();
-	// 		setBook(e.target.value);
-	// 	};
-	// };
-	const handleChange = (e) => {
-			setBook(e.target.value);
+	const handleChange = (event) => { //event - when a user does something
+		setBook(event.target.value);
 	};
 
 	const findBooks = (book) => {

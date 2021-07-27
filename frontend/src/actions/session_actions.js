@@ -1,4 +1,4 @@
-// import * as APISessionUtils from '../util/session_utils';
+// import * as APISessionUtils from '../util/session_api_util';
 // import jwt_decode from 'jwt-decode';
 
 
