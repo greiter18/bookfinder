@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from "axios";
 import BookIndexItem from "./book_index_item";
 import Pagination from "./pagination";
-import NavBar from './navBar';
+import NavBar from './NavBar/navBar';
 
 const HomePage = () => {
 	const [book, setBook] = useState("");
