@@ -1,40 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-import './navbar.css'
 
-const NavBar = () => {
+const NavBar = ({logout, loggedIn}) => {
 
   const logoutUser = (e) => {
       e.preventDefault();
-      this.props.logout();
+      logout();
   }
-
-  // Selectively render links dependent on whether the user is logged in
-  const getLinks = () => {
-      if (this.props.loggedIn) {
+  
+  const getLinks = () => {  // Selectively render links dependent on whether the user is logged in
+      if (loggedIn) {
         return (
-            <div>
-                <Link to={'/tweets'}>All Tweets</Link>
-                <Link to={'/profile'}>Profile</Link>
-                <Link to={'/new_tweet'}>Write a Tweet</Link>
-                <button onClick={this.logoutUser}>Logout</button>
+            <div className="navBarLinks">
+                <Link to={'/wishlist'}>Wish List</Link>
+                <Link to={'/readlist'}>Read List</Link>
+                <button onClick={logoutUser}>Logout</button>
             </div>
         );
       } else {
         return (
-            <div>
+            <div className="navBarLinks">
                 <Link to={'/signup'}>Signup</Link>
                 <Link to={'/login'}>Login</Link>
             </div>
         );
       }
   }
-
   
   return (
-    <div>
-        <h1>Chirper</h1>
-        { this.getLinks() }
+    <div className="NavbarMain">
+       <h1><Link to={'/'}> Bookfinder</Link></h1> 
+        { getLinks() }
     </div>
   );
 }

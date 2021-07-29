@@ -1,5 +1,3 @@
-
-// import configureStore from './store/store';
 // let store = configureStore({})
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -14,26 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // If a returning user has a session token stored in localStorage
   if (localStorage.jwtToken) {
-    // Set the token as a common header for all axios requests
-    setAuthToken(localStorage.jwtToken);
-    // Decode the token to obtain the user's information
-    const decodedUser = jwt_decode(localStorage.jwtToken);
-    // Create a preconfigured state we can immediately add to our store
-    const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
+    setAuthToken(localStorage.jwtToken); // Set the token as a common header for all axios requests
+    const decodedUser = jwt_decode(localStorage.jwtToken); // Decode the token to obtain the user's information
+    const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };// Create a preconfigured state we can immediately add to our store
     store = configureStore(preloadedState);
     const currentTime = Date.now() / 1000;
-    // If the user's token has expired
-    if (decodedUser.exp < currentTime) {
-      // Logout the user and redirect to the login page
-      store.dispatch(logout());
+    if (decodedUser.exp < currentTime) {// If the user's token has expired
+      store.dispatch(logout());// Logout the user and redirect to the login page
       window.location.href = '/login';
     }
   } else {
-    // If this is a first time user, start with an empty store
-    store = configureStore({});
+    store = configureStore({});  // If this is a first time user, start with an empty store
   }
-  // Render our root component and pass in the store as a prop
-  const root = document.getElementById('root');
+  const root = document.getElementById('root');// Render our root component and pass in the store as a prop
 
   ReactDOM.render(<Root store={store} />, root);
 });
