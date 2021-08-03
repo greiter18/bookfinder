@@ -1,96 +1,88 @@
-import React from 'react';
+import React, {useState , useEffect} from 'react';
 import { withRouter } from 'react-router-dom';
 
-class SignupForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      username: '',
-      password: '',
-      errors: {}
-    };
+const SignupForm =({signup , errors}) => {
+  const [email, setEmail] = useState('');
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
-  }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
-    }
+  useEffect(() => {
+    console.log('email',email)
+    console.log('username',username)
+    console.log('password',password)
+    },[])
 
-    this.setState({errors: nextProps.errors})
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+  //     this.props.history.push('/login');
+  //   }
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
+  //   this.setState({errors: nextProps.errors})
+  // }
 
-  handleSubmit(e) {
+  // const update = (field) => {
+  //   return e => this.setState({
+  //     [field]: e.currentTarget.value
+  //   });
+  // }
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     let user = {
-      email: this.state.email,
-      handle: this.state.handle,
-      password: this.state.password,
-      password2: this.state.password2
+      email: email,
+      username: username,
+      password: password,
     };
 
-    this.props.signup(user, this.props.history); 
+    signup(user); 
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // const renderErrors = () => {
+  //   return(
+  //     <ul>
+  //       {Object?.keys(errors)?.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {errors[error]}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
-  render() {
     return (
-      // <div className="signup-form-container">
-      //    <form onSubmit={this.handleSubmit}>
-      //     <div className="signup-form">
-      //       <br/>
-      //         <input type="text"
-      //           value={this.state.email}
-      //           onChange={this.update('email')}
-      //           placeholder="Email"
-      //         />
-      //       <br/>
-      //         <input type="text"
-      //           value={this.state.handle}
-      //           onChange={this.update('handle')}
-      //           placeholder="Handle"
-      //         />
-      //       <br/>
-      //         <input type="password"
-      //           value={this.state.password}
-      //           onChange={this.update('password')}
-      //           placeholder="Password"
-      //         />
-      //       <br/>
-      //       <br/>
-      //       <input type="submit" value="Submit" />
-      //       {this.renderErrors()}
-      //     </div>
-      //   </form>  
-      // </div>
-
-      <div>
+      <div className="signup-form-container">
         <h1>
-          Sign up form
+          Sign Up Page
         </h1>
+         <form onSubmit={handleSubmit}>
+          <div className="signup-form">
+            <br/>
+              <input type="text"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="Email"
+              />
+            <br/>
+              <input type="text"
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+                placeholder="Username"
+              />
+            <br/>
+              <input type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="Password"
+              />
+            <br/>
+            <br/>
+            <input type="submit" value="Submit" />
+            {/* {renderErrors()} */}
+          </div>
+        </form>  
       </div>
     );
-  }
 }
 
 export default withRouter(SignupForm);
