@@ -77,7 +77,7 @@ const SignupForm =({signup , errors}) => {
               />
             <br/>
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Sign Up" />
             {/* {renderErrors()} */}
           </div>
         </form>  
