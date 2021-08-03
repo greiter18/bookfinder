@@ -38,8 +38,8 @@ export const login = user => dispatch => ( // Upon login, set the session token 
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
         APIUtil.setAuthToken(token);
-        const decoded = jwt_decode(token);
-        dispatch(receiveCurrentUser(decoded))
+        const decoded = jwt_decode(token);//pulling the payload
+        dispatch(receiveCurrentUser(decoded))//hads the current user and id
     })
     .catch(err => {
         dispatch(receiveErrors(err.response.data));

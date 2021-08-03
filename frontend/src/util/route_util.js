@@ -14,9 +14,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
 );
 
 const Protected = ({ component: Component, loggedIn, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
+  <Route {...rest} render={props =>
       loggedIn ? (
         <Component {...props} />
       ) : (
@@ -31,5 +29,6 @@ const mapStateToProps = state => (
   {loggedIn: state.session.isAuthenticated}
 );
 
+//with router - gives components access to special things ie history
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));

@@ -1,4 +1,3 @@
-// let store = configureStore({})
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './root';
@@ -25,6 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({});  // If this is a first time user, start with an empty store
   }
   const root = document.getElementById('root');// Render our root component and pass in the store as a prop
-
+  window.getState = store.getState;
   ReactDOM.render(<Root store={store} />, root);
 });
