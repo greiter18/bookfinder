@@ -20,8 +20,8 @@ const NavBar = ({logout, loggedIn}) => {
       } else {
         return (
             <div className="navBarLinks">
-                <Link to={`/signup`}>Signup</Link>
-                <Link to={`/login`}>Login</Link>
+                <Link to='/signup'>Signup</Link>
+                <Link to='/login'>Login</Link>
             </div>
         );
       }
