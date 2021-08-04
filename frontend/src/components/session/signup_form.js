@@ -6,18 +6,17 @@ const SignupForm =({signup , errors}) => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 
-
-  useEffect(() => {
-    console.log('email',email)
-    console.log('username',username)
-    console.log('password',password)
-    },[])
+  // useEffect(() => {
+  //   console.log('email',email)
+  //   console.log('username',username)
+  //   console.log('password',password)
+  //   console.log('effect is working')
+  //   })// checking if the dependency / state changes - or whatever has changed
 
   // componentWillReceiveProps(nextProps) {
   //   if (nextProps.signedIn === true) {
   //     this.props.history.push('/login');
   //   }
-
   //   this.setState({errors: nextProps.errors})
   // }
 
@@ -30,11 +29,11 @@ const SignupForm =({signup , errors}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let user = {
-      email: email,
-      username: username,
-      password: password,
+      email,
+      username,
+      password,
     };
-
+    debugger
     signup(user); 
   }
 

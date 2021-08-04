@@ -14,6 +14,8 @@ const App = () => (
       <AuthRoute exact path="/" component={HomePage}/>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <HomePage />  
+    {/* will default to this page if none of the other routes match */}
     </Switch>
   </div>
 );

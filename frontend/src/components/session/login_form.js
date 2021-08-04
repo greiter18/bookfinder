@@ -5,8 +5,6 @@ const LoginForm = ({login}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-
-
   // Once the user has been authenticated, redirect to the Tweets page
   // cont componentWillReceiveProps(nextProps) {
   //   if (nextProps.currentUser === true) {
@@ -35,7 +33,7 @@ const LoginForm = ({login}) => {
   }
 
   // Render the session errors if there are any
-  // renderErrors() {
+  // const renderErrors = () => {
   //   return(
   //     <ul>
   //       {Object.keys(this.state?.errors).map((error, i) => (
@@ -67,7 +65,7 @@ const LoginForm = ({login}) => {
               />
             <br/>
             <input type="submit" value="Log In" />
-            {/* {this.renderErrors()} */}
+            {/* {renderErrors()} */}
           </div>
         </form>
       </div>

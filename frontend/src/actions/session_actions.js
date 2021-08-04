@@ -12,9 +12,9 @@ export const receiveCurrentUser = currentUser => ({ // We'll dispatch this when 
     currentUser
 });
 
-export const receiveUserSignIn = () => ({// This will be used to redirect the user to the login page upon signup
-    type: RECEIVE_USER_SIGN_IN
-});
+// export const receiveUserSignIn = () => ({// This will be used to redirect the user to the login page upon signup
+//     type: RECEIVE_USER_SIGN_IN
+// });
   
 export const receiveErrors = errors => ({ // We dispatch this one to show authentication errors on the frontend
     type: RECEIVE_SESSION_ERRORS,
@@ -25,13 +25,21 @@ export const logoutUser = () => ({ // When our user is logged out, we will dispa
     type: RECEIVE_USER_LOGOUT
 });
 
-export const signup = user => dispatch => (// Upon signup, dispatch the approporiate action depending on which type of response we receieve from the backend
-    APIUtil.signup(user).then(() => (
-        dispatch(receiveUserSignIn())
-    ), err => (
-        dispatch(receiveErrors(err.response.data))
-    ))
-);
+
+export const signup = user => dispatch => {
+  debugger
+  return(
+    APIUtil.signup(user).then(res => {
+        const { token } = res.data; 
+        localStorage.setItem('jwtToken', token);
+        APIUtil.setAuthToken(token);
+        const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded));
+    })
+    .catch(errors => {
+        dispatch(receiveErrors(errors.response.data));
+    })
+  )}
 
 export const login = user => dispatch => ( // Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
     APIUtil.login(user).then(res => {
@@ -52,3 +60,16 @@ export const logout = () => dispatch => {
     APIUtil.setAuthToken(false)
     dispatch(logoutUser())
 };
+
+
+
+
+//old way
+// export const signup = user => dispatch => {// Upon signup, dispatch the approporiate action depending on which type of response we receieve from the backend
+//   return (
+//     APIUtil.signup(user).then(() => (
+//         dispatch(receiveUserSignIn())
+//     ), err => (
+//         dispatch(receiveErrors(err.response.data))
+//     ))
+//   )};

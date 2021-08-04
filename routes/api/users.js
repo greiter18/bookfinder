@@ -21,12 +21,11 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 })
 
 router.post('/register', (req, res) => {
+  debugger
   const { errors, isValid }= validateRegisterInput(req.body);
-
   if(!isValid){
     return res.status(400).json(errors);
   }
-
   // Check to make sure nobody has already registered with a duplicate username
   User.findOne({ username: req.body.username })
   .then(user => {
@@ -55,7 +54,16 @@ router.post('/register', (req, res) => {
             if (err) throw err;
             newUser.password = hash;
             newUser.save()
-              .then(user => res.json(user)) // sends back to front end
+              .then(user => {
+                const payload = {id: user.id, username: user.username };
+                jwt.sign(payload, keys.secretOrKey, {expiresIn: 3600}, (err, token) => {
+                  res.json({
+                    success: true,
+                    token: 'Bearer ' + token
+                  });
+                })
+              })
+              // .then(user => res.json(user)) // sends back to front end
               .catch(err => console.log(err));
           })
         });
