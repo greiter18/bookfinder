@@ -5,13 +5,14 @@ const SignupForm =({signup , errors}) => {
   const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+	
 
   // useEffect(() => {
-  //   console.log('email',email)
-  //   console.log('username',username)
-  //   console.log('password',password)
+  //   console.log('email', email)
+  //   // console.log('username',username)
+  //   // console.log('password',password)
   //   console.log('effect is working')
-  //   })// checking if the dependency / state changes - or whatever has changed
+  //   },[])// checking if the dependency / state changes - or whatever has changed
 
   // componentWillReceiveProps(nextProps) {
   //   if (nextProps.signedIn === true) {
