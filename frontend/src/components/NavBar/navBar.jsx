@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-const NavBar = ({logout, loggedIn}) => {
+const NavBar = ({logout, loggedIn, user}) => {
 
   const logoutUser = (e) => {
       e.preventDefault();
@@ -12,9 +12,13 @@ const NavBar = ({logout, loggedIn}) => {
       if (loggedIn) {
         return (
             <div className="navBarLinks">
+               <h3>Hi {user}</h3>
+               {console.log(user)}
+               <div className="navBarlinksLinks">
                 <Link to={'/wishlist'}>Wish List</Link>
                 <Link to={'/readlist'}>Read List</Link>
-                <button onClick={logoutUser}>Logout</button>
+              </div>
+              <button onClick={logoutUser}>Logout</button>
             </div>
         );
       } else {

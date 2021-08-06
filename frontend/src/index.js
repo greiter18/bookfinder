@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';// We will use this to parse the user's session token
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
+import './stylesheets/App.scss'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

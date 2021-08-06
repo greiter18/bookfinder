@@ -5,14 +5,22 @@ const SignupForm =({signup , errors}) => {
   const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-	
 
-  // useEffect(() => {
-  //   console.log('email', email)
-  //   // console.log('username',username)
-  //   // console.log('password',password)
-  //   console.log('effect is working')
-  //   },[])// checking if the dependency / state changes - or whatever has changed
+  // const useState = (def) => {
+  //   let state = { newValue: def };
+  //   const someFunction = (something) => {
+  //     return state.newValue = something;
+  //   }
+    
+  //   return [state.newValue ,someFunction];
+  // }
+	
+  useEffect(() => {
+    console.log('email', email)
+    // console.log('username',username)
+    // console.log('password',password)
+    console.log('effect is working')
+    },[email])// checking if the dependency / state changes - or whatever has changed
 
   // componentWillReceiveProps(nextProps) {
   //   if (nextProps.signedIn === true) {
@@ -35,7 +43,7 @@ const SignupForm =({signup , errors}) => {
       password,
     };
     debugger
-    signup(user); 
+    signup(user); //prop being passed
   }
 
   // const renderErrors = () => {
