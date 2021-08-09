@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookIndexItem = ({ book }) => {
+const BookIndexItem = ({ book, addBook }) => {
 	const authors = book.authors.join(", ");
 
 	return (
@@ -12,7 +12,7 @@ const BookIndexItem = ({ book }) => {
 				<img src={book.imageLinks?.thumbnail} alt="book thumbnail" />
 			</a>
 			<p>{book.description}</p>
-			<button disabled>Add to wishlist</button>
+			<button  onClick={() => addBook(book)}>Add to wishlist</button>
 		</div>
 	);
 };

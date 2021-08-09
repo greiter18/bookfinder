@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const WishlistSchema = new Schema({
-  user: {
+  user_id: {
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  book: {
+  book_id: {
     type: Schema.Types.ObjectId,
     ref: 'books'
   }
