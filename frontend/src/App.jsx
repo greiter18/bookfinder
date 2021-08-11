@@ -11,9 +11,9 @@ const App = () => (
   <div>
      <NavBar/>
      <Switch>
-      <Route exact path="/books" component={HomePage}/>
-      <Route exact path="/login" component={LoginFormContainer} />
-      <Route exact path="/signup" component={SignupFormContainer} />
+      {/* <Route exact path="/" component={HomePage}/> */}
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <HomePage />  
     {/* will default to this page if none of the other routes match */}
     </Switch>

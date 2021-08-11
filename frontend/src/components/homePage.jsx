@@ -15,20 +15,28 @@ const HomePage = () => {
 		setBook(event.target.value);
 	};
 
+  const options = {
+  headers: {
+    common: null
+  }
+};
+
 	const findBooks = (book) => {
 		let newBooks = book.split(" ").join("+");
 		return axios.get(
-			`https://www.googleapis.com/books/v1/volumes?q=${newBooks}&startIndex=${currentPage}&maxResults=${totalBooksShown}`
+			`https://www.googleapis.com/books/v1/volumes?q=${newBooks}&startIndex=${currentPage}&maxResults=${totalBooksShown}`,
+      options
 		);
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+    debugger
 		findBooks(book).then((response) => {
 			console.log(response);
 			setBookList(response.data.items);
 			setTotalBooks(response.data.totalItems);
-		});
+		}).catch(err => console.log('error',err));
 	};
 
 	const list = bookList.map((book) => {
