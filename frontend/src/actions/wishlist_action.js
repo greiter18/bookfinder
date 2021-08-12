@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/session_api_util';
+import * as APIUtil from '../util/wishlist_util';
 
 export const RECEIVE_WISHLIST_ALL = "RECEIVE_WISHLIST_ALL";
 export const REMOVE_BOOK = "REMOVE_BOOK";

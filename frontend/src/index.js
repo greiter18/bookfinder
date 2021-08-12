@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './root';
 import configureStore from './store/store';
+import axios from 'axios';
 import jwt_decode from 'jwt-decode';// We will use this to parse the user's session token
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
@@ -26,5 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');// Render our root component and pass in the store as a prop
   window.getState = store.getState;
+  window.axios = axios;
+
   ReactDOM.render(<Root store={store} />, root);
 });
