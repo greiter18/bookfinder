@@ -40,7 +40,7 @@ const HomePage = () => {
 	};
 
 	const list = bookList.map((book) => {
-		return <BookIndexItem book={book.volumeInfo} key={book.id} />;
+		return <BookIndexItem book={book.volumeInfo} key={book.id} bookId={book.id}/>;
 	});
 
 	return (
