@@ -4,7 +4,7 @@ import BookIndexItem from "./book_index_item";
 import Pagination from "./pagination";
 
 
-const HomePage = () => {
+const HomePage = ({currentUser}) => {
 	const [book, setBook] = useState("");
 	const [bookList, setBookList] = useState([]);
 	const [totalBooks, setTotalBooks] = useState(0);
@@ -40,7 +40,7 @@ const HomePage = () => {
 	};
 
 	const list = bookList.map((book) => {
-		return <BookIndexItem book={book.volumeInfo} key={book.id} bookId={book.id}/>;
+		return <BookIndexItem book={book.volumeInfo} key={book.id} bookId={book.id} currentUser={currentUser}/>;
 	});
 
 	return (

@@ -3,10 +3,10 @@ import * as APIUtil from '../util/wishlist_util';
 export const RECEIVE_WISHLIST_ALL = "RECEIVE_WISHLIST_ALL";
 export const REMOVE_BOOK = "REMOVE_BOOK";
 
-export const receiveWishlist = book => {
+export const receiveWishlist = books => {
   return ({   
     type: RECEIVE_WISHLIST_ALL,
-    book
+    books
   })
 }
 
@@ -17,9 +17,9 @@ export const removeBook = bookId => {
   })
 }
 
-export const add_Book = book => dispatch => (
-  APIUtil.add_Book(book).then(
-    book => dispatch(receiveWishlist(book))
+export const add_Book = bookId => dispatch => (
+  APIUtil.add_Book(bookId).then(
+    books => dispatch(receiveWishlist(books))
   )
 )
 
