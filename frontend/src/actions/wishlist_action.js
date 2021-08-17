@@ -17,11 +17,13 @@ export const removeBook = bookId => {
   })
 }
 
-export const add_Book = bookId => dispatch => (
+export const add_Book = bookId => dispatch => {
+  debugger
+  return (
   APIUtil.add_Book(bookId).then(
     books => dispatch(receiveWishlist(books))
   )
-)
+  )}
 
 export const remove_book = book => dispatch => (
   APIUtil.remove_book(book).then(

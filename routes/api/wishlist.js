@@ -10,11 +10,11 @@ passport.authenticate("jwt", { session: false }),
   .then(name => {
     if(name){
     } else {
-      const newwishlist = new Wishlist({
+      const newWishlist = new Wishlist({
       user: req.user.id,
-      id: req.body.id
+      bookId: req.body.id
       })
-      newwishlist.save()
+      newWishlist.save()
       .then(wishlist => res.json(wishlist))
     }
   })
