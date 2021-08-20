@@ -8,7 +8,7 @@ const mstp = store => ({
 })
 
 const mdtp = dispatch => ({
- addBook: bookId => dispatch(add_Book(bookId))
+ addBook: (bookId, currentUser) => dispatch(add_Book(bookId, currentUser))
 })
 
 export default withRouter(connect(mstp,mdtp)(HomePage))

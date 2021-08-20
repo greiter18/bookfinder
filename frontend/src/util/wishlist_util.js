@@ -6,7 +6,9 @@ export const add_Book = (bookId, currentUser) => {
   debugger
   
   return (
-  axios.post(`/api/${bookId.currentUser.id}/wishlist/`, bookId)
+  //axios.post(`/api/users/${currentUser.id}/wishlists/`, bookId)
+  //
+  axios.post(`/api/wishlists/`, bookId)
   )}
 
 export const remove_book = book => {
