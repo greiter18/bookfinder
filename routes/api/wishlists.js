@@ -6,6 +6,7 @@ const Wishlist = require("../../config/models/Wishlist");
 router.post("/",
 passport.authenticate("jwt", { session: false }),
 (req, res) => {
+  debugger
   Wishlist.findOne({name: req.body.name})
   .then(name => {
     if(name){
@@ -19,3 +20,5 @@ passport.authenticate("jwt", { session: false }),
     }
   })
 })
+
+module.exports = router;

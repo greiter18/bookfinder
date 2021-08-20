@@ -2,11 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI; // connects to our database
-const users = require("./routes/api/users");
-const books = require("./routes/api/books");
 const bodyParser = require('body-parser'); // used for postman
 const passport = require("passport");
-const User = require('./config/models/User');
+
+const users = require("./routes/api/users");
+const books = require("./routes/api/books");
+const wishlists = require("./routes/api/wishlists");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", users);// if it does match we send in the users object
 app.use("/api/books", books);
+app.use("/api/wishlists", wishlists);
 
 const port = process.env.PORT || 5000; // listen to production port or 5000
 
