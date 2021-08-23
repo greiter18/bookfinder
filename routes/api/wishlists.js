@@ -3,6 +3,16 @@ const router = express.Router();
 const passport = require("passport");
 const Wishlist = require("../../config/models/Wishlist");
 
+
+router.get("/user/:user_id",
+passport.authenticate("jwt", { session: false }),
+(req, res) => {
+    Wishlist.find({ user: req.params.user_id })
+      .then((wishlist) => res.json(wishlist))
+      .catch((err) => res.status(400).json(err));
+  }
+);
+
 router.post("/",
 passport.authenticate("jwt", { session: false }),
 (req, res) => {
@@ -20,5 +30,8 @@ passport.authenticate("jwt", { session: false }),
     }
   })
 })
+
+
+
 
 module.exports = router;
