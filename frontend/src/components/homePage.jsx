@@ -31,7 +31,6 @@ const HomePage = ({currentUser, addBook}) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-    debugger
 		findBooks(book).then((response) => {
 			console.log(response);
 			setBookList(response.data.items);
