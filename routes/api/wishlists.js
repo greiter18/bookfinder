@@ -13,24 +13,16 @@ passport.authenticate("jwt", { session: false }),
 );
 
 router.post("/",
-// passport.authenticate("jwt", { session: false }),
+passport.authenticate("jwt", {session: false}),
 (req, res) => {
-  debugger
-  Wishlist.findOne({username: req.body.currentUser.username})
-
-  .then(name => {
-    if(name){
-    } else {
-      debugger
-      const newWishlist = new Wishlist({
-      user: req.body.currentUser.id,
-      bookId: req.body.bookId
-      })
-      newWishlist.save()
-      .then(wishlist => res.json(wishlist))
-    }
-  })
-})
+  const newWishlist = new Wishlist({
+    user_id: req.user.id,
+    book_id: req.body.bookId
+    })
+    newWishlist.save()
+    .then(wishlist => res.json(wishlist))
+  }
+)
 
 
 

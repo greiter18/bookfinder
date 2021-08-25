@@ -3,17 +3,14 @@ const Schema = mongoose.Schema;
 
 const WishlistSchema = new Schema({
   user_id: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'users'
   },
   book_id: {
-    type: Schema.Types.ObjectId,
-    ref: 'books'
+    type: String,
+    ref: 'books' // confirm if this is correct???
   }
 })
 
-
-
 const Wishlist = mongoose.model('wishlist', WishlistSchema);
-
 module.exports = Wishlist;

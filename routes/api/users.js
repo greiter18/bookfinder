@@ -97,6 +97,7 @@ router.post('/register', (req, res) => {
                 // Tell the key to expire in one hour
                 {expiresIn: 3600},
                 (err, token) => {
+                  // console.log('token',token)
                   res.json({
                     success: true,
                     token: 'Bearer ' + token
