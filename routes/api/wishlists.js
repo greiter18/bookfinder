@@ -6,7 +6,9 @@ const Wishlist = require("../../config/models/Wishlist");
 router.get("/user/:user_id",
 passport.authenticate("jwt", { session: false }),
 (req, res) => {
-    Wishlist.find({ user: req.params.user_id })
+  debugger
+    Wishlist
+      .find({ user_id: req.params.user_id })
       .then((wishlist) => res.json(wishlist))
       .catch((err) => res.status(400).json(err));
   }
