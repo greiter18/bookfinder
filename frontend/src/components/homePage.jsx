@@ -18,8 +18,8 @@ const HomePage = ({currentUser, addBook}) => {
   const options = {
   headers: {
     common: null
-  }
-};
+    }
+  };
 
 	const findBooks = (book) => {
 		let newBooks = book.split(" ").join("+");

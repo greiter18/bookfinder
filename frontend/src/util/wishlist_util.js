@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-export const receiveWishlist =  (user_id) => {
+export const fetchWishlist =  (user_id) => {
+  debugger
   return(
     axios.get(`/api/wishlists/user/${user_id}`)
   )

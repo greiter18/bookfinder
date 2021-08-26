@@ -6,7 +6,6 @@ const Wishlist = require("../../config/models/Wishlist");
 router.get("/user/:user_id",
 passport.authenticate("jwt", { session: false }),
 (req, res) => {
-  debugger
     Wishlist
       .find({ user_id: req.params.user_id })
       .then((wishlist) => res.json(wishlist))
@@ -26,7 +25,18 @@ passport.authenticate("jwt", {session: false}),
   }
 )
 
-
-
+router.delete("/:wishlist_id",
+passport.authenticate("jwt", {session: false}),
+(req,res) =>{
+  Wishlist.findByIdAndRemove(req.params.wishlist_id)
+  .then((wishlists) => {
+    return res.json(wishlists)
+  })
+  .catch(err => res.status(400).json(err));
+})
 
 module.exports = router;
+
+
+//user_id:610d42e0f570748bea5ed04b
+//wishlist_id: 6126afe975d0f4ce91557d3b

@@ -15,7 +15,7 @@ const App = () => (
       <Route exact path="/" component={HomePage}/>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/wishlist" component={Wishlist} />
+      <ProtectedRoute exact path="/wishlist/" component={Wishlist} />
       <ProtectedRoute exact path="/signup" component={SignupFormContainer} />
       <HomePage />  
     {/* will default to this page if none of the other routes match */}

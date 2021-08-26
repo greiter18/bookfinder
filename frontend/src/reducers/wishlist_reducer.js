@@ -3,9 +3,17 @@ import {RECEIVE_WISHLIST_ALL, REMOVE_BOOK } from '../actions/wishlist_action';
 export default function(state = {}, action){
   switch (action.type) {
     case RECEIVE_WISHLIST_ALL:
-      return {books: action.book}
+      console.log('wishlistttttttt',action)
+      debugger
+       let wishlist = action.wishlists.data;
+       let wishObj = {};
+       for(let wish of wishlist){
+        wishObj[wish._id] = wish
+       }
+       console.log('wishObj',wishObj)
+      return wishObj;
     case REMOVE_BOOK:
-      const newState = Object.assign({}, state, action.routes);
+      const newState = Object.assign({}, state, action.wishlist);
       delete newState[action.bookId]
       return newState
     default:
