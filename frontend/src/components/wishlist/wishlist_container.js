@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import Wishlist from './wishlist'
 
 const mstp = store => ({
-  wishlists: store.wishlists.wishlists,
+  wishlists: Object.values(store.wishlists),
   currentUser: store.session.user
 })
 

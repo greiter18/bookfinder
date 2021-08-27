@@ -13,7 +13,7 @@ export default function(state = {}, action){
        console.log('wishObj',wishObj)
       return wishObj;
     case REMOVE_BOOK:
-      const newState = Object.assign({}, state, action.wishlist);
+      const newState = Object.assign({}, state);
       delete newState[action.bookId]
       return newState
     default:
