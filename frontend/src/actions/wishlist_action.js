@@ -39,3 +39,9 @@ export const fetchWishlist = (id) => dispatch => {
       wishlists => dispatch(receiveWishlist(wishlists)))
   )
 }
+
+export const fetchBooks = id => dispatch => {
+  // return (
+
+  // )
+}
