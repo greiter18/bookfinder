@@ -6,6 +6,7 @@ import axios from "axios";
 
 const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book }) => {
   const [books, setBooks] = useState([]);
+  //const [books, setBooks] = useState([]);
 
   useEffect(() => {
     debugger
@@ -19,20 +20,22 @@ const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book }) => {
       //async await
       return wishlist.book_id
     })
-    setBooks(ids)
-  }, [wishlists])
+    setBooks(ids)}, [wishlists])
 
-  const options = {
-    headers: {
-    common: null
-    }
-  };
+  // const options = {
+  //   headers: {
+  //   common: null
+  //   }
+  // };
 
-  // const tester = () => {
-  //   return (
-  //     <h1>tester function </h1>
-  //   )
+  // const getBooks = async () => {
+  //   const response = await fetch((`https://www.googleapis.com/books/v1/volumes/hf5f3r38P1cC`));//, options))
+  //   const bookList = await response.json(); 
+  //   console.log('bookilist',bookList);
+  //   return bookList
   // }
+
+  // getBooks().then(data => console.log('.thennnnn',data))
 
   // const setbook = wishlists?.forEach(wishlist => {
   // // //put into
@@ -56,11 +59,11 @@ const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book }) => {
 
   return (
     <div>
-      {/* {console.log('wishlistlistlistlist',wishlistList)} */}
       <h1>Wishlist page</h1>  
-      {/* {wishlistList} */}
       {console.log('books',books)}
-      {/* {tester()} */}
+      {/* {getBooks().then(data => 
+        console.log('.thennnnn',data.volumeInfo.title)
+        )} */}
       <WishlistIndexItem/>
     </div>
   )
