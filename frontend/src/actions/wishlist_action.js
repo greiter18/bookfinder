@@ -2,6 +2,7 @@ import * as APIUtil from '../util/wishlist_util';
 
 export const RECEIVE_WISHLIST_ALL = "RECEIVE_WISHLIST_ALL";
 export const REMOVE_BOOK = "REMOVE_BOOK";
+export const RECEIVE_BOOK_FROM_LIST = "RECEIVE_BOOK_FROM_LIST";
 
 export const receiveWishlist = wishlists => {
   debugger
@@ -15,6 +16,13 @@ export const removeBook = wishlistId => {
   return ({
     type: REMOVE_BOOK,
     wishlistId
+  })
+}
+
+export const receiveBookFromList = book => {
+  return ({
+    type: RECEIVE_BOOK_FROM_LIST,
+    book
   })
 }
 
@@ -41,7 +49,8 @@ export const fetchWishlist = (id) => dispatch => {
 }
 
 export const fetchBooks = id => dispatch => {
-  // return (
-
-  // )
+  return (
+  APIUtil.fetchbookCall(id).then(
+    bookData => dispatch(receiveBookFromList(bookData)))
+  )
 }

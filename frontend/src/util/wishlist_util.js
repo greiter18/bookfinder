@@ -19,3 +19,9 @@ export const remove_book = book => {
   return(
   axios.delete(`/api/wishlists/${book.wishlist.id}/${book.id}`, book)
   )}
+
+  export const  fetchbookCall = bookId => {
+    return(
+      axios.get(`https://www.googleapis.com/books/v1/volumes/hf5f3r38P1cC`)
+    )
+  } 

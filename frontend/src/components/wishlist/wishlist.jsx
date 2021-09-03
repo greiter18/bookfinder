@@ -4,7 +4,7 @@ import axios from "axios";
 //hf5f3r38P1cC - tester
 //jWAsAAAAQBAJ
 
-const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book }) => {
+const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book , fetchBooks}) => {
   const [books, setBooks] = useState([]);
   //const [books, setBooks] = useState([]);
 
@@ -22,13 +22,19 @@ const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book }) => {
     })
     setBooks(ids)}, [wishlists])
 
+    useEffect(() => {
+      books.forEach(book => {
+        fetchBooks(book)
+      })
+    })
+
   // const options = {
   //   headers: {
   //   common: null
   //   }
   // };
 
-  // const getBooks = async () => {
+  // const fetchBooksfromList = async () => {
   //   const response = await fetch((`https://www.googleapis.com/books/v1/volumes/hf5f3r38P1cC`));//, options))
   //   const bookList = await response.json(); 
   //   console.log('bookilist',bookList);
