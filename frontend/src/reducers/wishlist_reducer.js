@@ -16,6 +16,7 @@ export default function(state = {}, action){
       const newState = Object.assign({}, state);
       delete newState[action.bookId]
       return newState
+    case RECEIVE_BOOK_FROM_LIST:
     default:
       return state
   }
