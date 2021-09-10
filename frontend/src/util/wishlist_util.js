@@ -22,6 +22,6 @@ export const remove_book = book => {
 
   export const  fetchbookCall = bookId => {
     return(
-      axios.get(`https://www.googleapis.com/books/v1/volumes/hf5f3r38P1cC`)
+      axios.get(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
     )
   } 
