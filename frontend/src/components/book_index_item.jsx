@@ -9,6 +9,11 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
     } else {
       return '';
     }
+    // if(currentUser){
+    //   return (<button  onClick={() => addBook(bookId, currentUser, book.title, book.author, book.image)}>Add to wishlist</button>)
+    // } else {
+    //   return '';
+    // }
   }
 
 	return (
