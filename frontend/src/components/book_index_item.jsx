@@ -10,7 +10,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
       return '';
     }
     // if(currentUser){
-    //   return (<button  onClick={() => addBook(bookId, currentUser, book.title, book.author, book.image)}>Add to wishlist</button>)
+    //   return (<button  onClick={() => addBook(bookId, currentUser, book.title, book.authors, book.imageLinks.thumbnail, book.infoLink)}>Add to wishlist</button>)
     // } else {
     //   return '';
     // }
@@ -19,6 +19,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
 	return (
 		<div className="book_item">
 			{/* <h1>Book #{book.id}</h1> */}
+      {console.log('booook', book)}
 			<h2>{book.title}</h2>
 			<h3>Author(s): {authors}</h3>
 			<a href={book.infoLink} target="_blank" rel="noopener noreferrer">
