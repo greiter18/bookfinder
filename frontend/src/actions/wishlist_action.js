@@ -26,10 +26,10 @@ export const receiveBookFromList = book => {
   })
 }
 
-export const add_Book = (bookId, currentUser) => dispatch => {
+export const add_Book = (book, currentUser) => dispatch => {
   debugger
   return (
-  APIUtil.add_Book(bookId, currentUser).then(
+  APIUtil.add_Book(book, currentUser).then(
     wishlists => dispatch(receiveWishlist(wishlists))
   )
   )}
