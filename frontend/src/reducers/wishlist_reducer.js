@@ -1,4 +1,4 @@
-import {RECEIVE_WISHLIST_ALL, REMOVE_BOOK , RECEIVE_BOOK_FROM_LIST} from '../actions/wishlist_action';
+import {RECEIVE_WISHLIST_ALL, REMOVE_BOOK } from '../actions/wishlist_action';
 
 export default function(state = {}, action){
   switch (action.type) {
@@ -16,7 +16,6 @@ export default function(state = {}, action){
       const newState = Object.assign({}, state);
       delete newState[action.bookId]
       return newState
-    case RECEIVE_BOOK_FROM_LIST:
     default:
       return state
   }

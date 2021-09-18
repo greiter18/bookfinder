@@ -13,20 +13,20 @@ const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book , fetchBoo
     fetchWishlist(currentUser.id)
   }, [])
 
-   useEffect(() => {
-    debugger
-    console.log('useeffect wishlist',wishlists)
-    let ids = wishlists.map(wishlist => {
-      //async await
-      return wishlist.book_id
-    })
-    setBooks(ids)}, [wishlists])
+  //  useEffect(() => {
+  //   debugger
+  //   console.log('useeffect wishlist',wishlists)
+  //   let ids = wishlists.map(wishlist => {
+  //     //async await
+  //     return wishlist.book_id
+  //   })
+  //   setBooks(ids)}, [wishlists])
 
-    useEffect(() => {
-      books.forEach(book => {
-        fetchBooks(book)
-      })
-    })
+  //   useEffect(() => {
+  //     books.forEach(book => {
+  //       fetchBooks(book)
+  //     })
+  //   })
 
   // const options = {
   //   headers: {

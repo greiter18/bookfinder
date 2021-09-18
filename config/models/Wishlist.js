@@ -11,24 +11,23 @@ const WishlistSchema = new Schema({
   //   ref: 'books' // confirm if this is correct???
   // }
     user_id: {
-    type: String,
+     type: String,
      ref: 'users'
    },
-    book_title: {
+    title: {
      type: String,
    },
-   book_author: {
+    author: {
      type: String,
    },
-  book_id: {
-    type: String,
-    ref: 'books' // confirm if this is correct???
+    book_id: {
+     type: String,
   },
-  book_image: {
-    type: String
+    image: {
+     type: String
   },
-  book_link: {
-    type: String
+    link: {
+     type: String
   }
 
 })

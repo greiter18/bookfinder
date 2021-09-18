@@ -44,7 +44,7 @@ const HomePage = ({currentUser, addBook}) => {
 
 	return (
 		<div>
-      {console.log('currentuser',currentUser.id)}
+      {console.log('currentuser',currentUser?.id)}
 			<h1>Bookfinder</h1>
 			<form onSubmit={handleSubmit}>
 				What book do you want

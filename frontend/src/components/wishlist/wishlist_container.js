@@ -12,7 +12,7 @@ const mstp = store => ({
 const mdtp = dispatch => ({
   fetchWishlist: id => dispatch(fetchWishlist(id)),
   remove_book: id => dispatch(remove_book(id)),
-  fetchBooks: id => dispatch(fetchBooks(id))
+  // fetchBooks: id => dispatch(fetchBooks(id))
 })
 
 export default withRouter(connect(mstp,mdtp)(Wishlist))

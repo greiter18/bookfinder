@@ -16,12 +16,23 @@ passport.authenticate("jwt", { session: false }),
 router.post("/",
 passport.authenticate("jwt", {session: false}),
 (req, res) => {
+debugger  
+console.log('reqqqqqqqqqqbodddyyy',req.body)
+console.log('reqqqqqqqqqquserrrrrr',req.user)
   const newWishlist = new Wishlist({
     user_id: req.user.id,
-    book_id: req.body.bookId
+    book_id: req.body.bookId,
+    title: req.body.title,
+    author: req.body.author,
+    link: req.body.link,
+    image: req.body.image
     })
     newWishlist.save()
-    .then(wishlist => res.json(wishlist))
+    .then(wishlist => {
+      debugger
+      console.log('wihslisttttt',wishlist)
+      return res.json(wishlist)
+    })
   }
 )
 

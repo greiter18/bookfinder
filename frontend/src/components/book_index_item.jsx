@@ -9,7 +9,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
     link: book.infoLink, bookId,
     bookId: bookId
     }
-    
+
   const addToWishlist = () => {
     // if(currentUser){
     //   return (<button  onClick={() => addBook(bookId, currentUser)}>Add to wishlist</button>)
