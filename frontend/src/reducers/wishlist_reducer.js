@@ -1,7 +1,10 @@
-import {RECEIVE_WISHLIST_ALL, REMOVE_BOOK } from '../actions/wishlist_action';
+import {RECEIVE_WISHLIST_ALL, REMOVE_BOOK, RECEIVE_WISHLIST } from '../actions/wishlist_action';
 
 export default function(state = {}, action){
   switch (action.type) {
+    case RECEIVE_WISHLIST:
+      debugger
+      return action.wishlist.data
     case RECEIVE_WISHLIST_ALL:
       console.log('wishlistttttttt',action)
       debugger

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
-  const authors = book.authors.join(", ");
+  const authors = book?.authors?.join(", ");
   const bookInfo = {
     title: book.title, 
     authors: authors,
