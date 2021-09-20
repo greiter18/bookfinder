@@ -6,7 +6,6 @@ import WishlistIndexItem from './wishlist_index_item';
 
 const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book }) => {
   useEffect(() => {
-    debugger
     fetchWishlist(currentUser.id)
   }, [])
 

@@ -6,7 +6,7 @@ export const REMOVE_BOOK = "REMOVE_BOOK";
 export const RECEIVE_BOOK_FROM_LIST = "RECEIVE_BOOK_FROM_LIST";
 
 export const receiveWishlists = wishlists => {
-  debugger
+  // debugger
   return ({   
     type: RECEIVE_WISHLIST_ALL,
     wishlists
@@ -14,7 +14,7 @@ export const receiveWishlists = wishlists => {
 }
 
 export const receiveWishlist = wishlist => {
-  debugger
+  // debugger
   return ({ 
     type: RECEIVE_WISHLIST,
     wishlist
@@ -22,9 +22,10 @@ export const receiveWishlist = wishlist => {
 }
 
 export const removeBook = wishlistId => {
+  debugger
   return ({
     type: REMOVE_BOOK,
-    wishlistId
+    wishlistId: wishlistId.data
   })
 }
 
@@ -36,7 +37,7 @@ export const removeBook = wishlistId => {
 // }
 
 export const add_Book = (book, currentUser) => dispatch => {
-  debugger
+  // debugger
   return (
   APIUtil.add_Book(book, currentUser).then(
     wishlists => dispatch(receiveWishlist(wishlists))
@@ -49,14 +50,16 @@ export const add_Book = (book, currentUser) => dispatch => {
 //   )
 //   }
 
-export const remove_book = wishlistId => dispatch => (
-  APIUtil.remove_book(wishlistId).then(
-    book => dispatch(removeBook(book.id))
-  )
-)
+export const remove_book = wishlistId => dispatch => {
+  debugger
+  return(
+    APIUtil.remove_book(wishlistId).then(
+    book => dispatch(removeBook(book)))
+    )
+  }
 
 export const fetchWishlist = (id) => dispatch => {
-  debugger 
+  // debugger 
   return (
     APIUtil.fetchWishlist(id).then(
       wishlists => dispatch(receiveWishlists(wishlists)))

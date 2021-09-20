@@ -1,23 +1,23 @@
 import axios from 'axios';
 
 export const fetchWishlist =  (user_id) => {
-  debugger
+  // debugger
   return(
     axios.get(`/api/wishlists/user/${user_id}`)
   )
 }
 
 export const add_Book = (book, currentUser) => {
-  debugger
+  // debugger
   return (
   //axios.post(`/api/users/${currentUser.id}/wishlists/`, bookId)
   axios.post(`/api/wishlists/`, book)
   )}
 
-export const remove_book = book => {
+export const remove_book = id => {
   debugger
   return(
-  axios.delete(`/api/wishlists/${book.wishlist.id}/${book.id}`, book)
+  axios.delete(`/api/wishlists/${id}`)
   )}
 
   export const  fetchbookCall = bookId => {

@@ -38,9 +38,12 @@ console.log('reqqqqqqqqqquserrrrrr',req.user)
 
 router.delete("/:wishlist_id",
 passport.authenticate("jwt", {session: false}),
-(req,res) =>{
+(req,res) => {
+  console.log('idddddddddddddd',req.params.wishlist_id)
   Wishlist.findByIdAndRemove(req.params.wishlist_id)
   .then((wishlists) => {
+    debugger
+    console.log('ressssssssssssssssss',wishlists)
     return res.json(wishlists)
   })
   .catch(err => res.status(400).json(err));
