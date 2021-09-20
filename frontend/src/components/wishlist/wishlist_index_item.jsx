@@ -1,20 +1,17 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-const WishlistIndexItem = ({title}) => {
+const WishlistIndexItem = ({book, removeBook}) => {
 
-// const wishlistBook = bookId => {
-//   return axios.get(
-//     `https://www.googleapis.com/books/v1/volumes/${bookId}`
-//   ).then((response) => {
-//         let title =  response.volumeInfo.title;
-//         let author = response.volumeInfo.authors
-//   }) 
-// }
   return(
-    <div>
-      {title}
-      index item
+    <div className="wishListItem">
+      {/* {console.log('wishlistindex item',book)} */}
+      Title: {book.title}
+      Author: {book.author}
+      <a href={book.link} target="_blank">
+        <img src={book?.image} alt="" />
+      </a>
+      <button>Remove From Wishlist</button>
     </div>
   )
 }
