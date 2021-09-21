@@ -23,7 +23,7 @@ console.log('reqqqqqqqqqquserrrrrr',req.user)
     user_id: req.user.id,
     book_id: req.body.bookId,
     title: req.body.title,
-    author: req.body.author,
+    author: req.body.authors,
     link: req.body.link,
     image: req.body.image
     })

@@ -3,7 +3,7 @@ import * as APIUtil from '../util/wishlist_util';
 export const RECEIVE_WISHLIST_ALL = "RECEIVE_WISHLIST_ALL";
 export const RECEIVE_WISHLIST = "RECEIVE_WISHLIST";
 export const REMOVE_BOOK = "REMOVE_BOOK";
-export const RECEIVE_BOOK_FROM_LIST = "RECEIVE_BOOK_FROM_LIST";
+// export const RECEIVE_BOOK_FROM_LIST = "RECEIVE_BOOK_FROM_LIST";
 
 export const receiveWishlists = wishlists => {
   // debugger

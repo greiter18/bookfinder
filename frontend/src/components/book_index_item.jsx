@@ -5,8 +5,8 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
   const bookInfo = {
     title: book.title, 
     authors: authors,
-    image: book.imageLinks.thumbnail, 
-    link: book.infoLink, bookId,
+    image: book.imageLinks?.thumbnail, 
+    link: book?.infoLink,
     bookId: bookId
     }
 

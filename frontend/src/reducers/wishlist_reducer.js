@@ -16,9 +16,9 @@ export default function(state = {}, action){
        console.log('wishObj',wishObj)
       return wishObj;
     case REMOVE_BOOK:
-      debugger
+      // debugger
       const newState = Object.assign({}, state);
-      console.log('wishlistACTIONNNNNN',action.wishList)
+      // console.log('wishlistACTIONNNNNN',action.wishList)
       delete newState[action.wishlistId._id]
       return newState
     default:
