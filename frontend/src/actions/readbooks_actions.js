@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/readlist_util'
+import * as APIUtil from '../util/readbooks_util'
 
 export const RECEIVE_READLIST_ALL = "RECEIVE_READLIST_ALL";
 export const RECEIVE_READBOOK = "RECEIVE_READBOOK";
@@ -16,10 +16,10 @@ export const receiveReadBook = readBook => {
     readBook
   })
 }
-export const removeReadBook = id => {
+export const removeReadBook = readBookId => {
   return ({
     type: REMOVE_READBOOK,
-    id
+    readBookId
   })
 }
 
