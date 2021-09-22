@@ -1,13 +1,18 @@
 .NavbarMain{
-  background-color: lightblue;
+   background-color: lightgray;
+  // background-image: url('booksimage.jpeg');
+  // background-size: 40%;
+  // color: white;
 }
 
 .navBarLinks{
   display: flex;
   justify-content:flex-start;
+  color:white;
 }
 
 .navBarlinksLinks{
   display: flex;
   flex-direction: column;
+  color:white;
 }

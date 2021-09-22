@@ -6,15 +6,17 @@ const WishlistIndexItem = ({book, removeBook, addReadBook}) => {
 
   return(
     <div className="wishListItem">
-      {console.log('wishlistindex item',book._id)}
-      Title: {book.title}
-      Author: {book.author}
+      <div className="wishListItemDetails">
+        Title: {book.title}
+        Author: {book.author}
+      </div>
       <a href={book.link} target="_blank">
-        <img src={book?.image} alt="" />
+       <img src={book?.image} alt={book?.title} />
       </a>
-      {/* <button onClick={() => removeBook(book._id)}>Remove From Wishlist</button> */}
-      <i class="fa fa-trash-o" aria-hidden="true" onClick={() => removeBook(book._id)}></i>
-      <button onClick={() => addReadBook(book)}>Read</button>
+      <div>
+        <i class="fa fa-trash-o" aria-hidden="true" onClick={() => removeBook(book._id)}></i>
+        <button onClick={() => addReadBook(book)}>Read</button>
+      </div>
     </div>
   )
 }

@@ -35,6 +35,7 @@ const NavBar = ({logout, loggedIn, user}) => {
   
   return (
     <div className="NavbarMain">
+      
        <h1><Link to={'/'}> Bookfinder</Link></h1> 
        <h3>Happy Reading!</h3>
         { getLinks() }

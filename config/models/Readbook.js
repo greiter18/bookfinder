@@ -28,8 +28,5 @@ const ReadbookSchema = new Schema({
   }
 })
 
-
-
-const Readbook = mongose.model('readbook', ReadbookSchema);
-
+const Readbook = mongoose.model('readbook', ReadbookSchema);
 module.exports = Readbook;

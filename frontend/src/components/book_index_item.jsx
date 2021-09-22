@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
   const authors = book?.authors?.join(", ");
