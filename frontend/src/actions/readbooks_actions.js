@@ -5,6 +5,7 @@ export const RECEIVE_READBOOK = "RECEIVE_READBOOK";
 export const REMOVE_READBOOK = "REMOVE_READBOOK";
 
 export const receiveReadBooks = readBooks => {
+  // debugger
   return ({
     type: RECEIVE_READBOOKS_ALL,
     readBooks
@@ -12,6 +13,7 @@ export const receiveReadBooks = readBooks => {
 }
 
 export const receiveReadBook = readBook => {
+  // debugger
   return ({
     type: RECEIVE_READBOOK,
     readBook
@@ -19,6 +21,7 @@ export const receiveReadBook = readBook => {
 }
 
 export const removeReadBook = readBookId => {
+  debugger
   return ({
     type: REMOVE_READBOOK,
     readBookId
@@ -26,6 +29,7 @@ export const removeReadBook = readBookId => {
 }
 
 export const addReadBook = (book) => dispatch => {
+  // debugger
   return (
   APIUtil.addReadBook(book).then(
     readList => dispatch(receiveReadBook(readList))
@@ -34,6 +38,7 @@ export const addReadBook = (book) => dispatch => {
 }
 
 export const fetchReadBooks = id => dispatch => {
+  // debugger
   return (
     APIUtil.fetchReadBooks(id).then(
       readBooks => dispatch(receiveReadBooks(readBooks))
@@ -42,6 +47,7 @@ export const fetchReadBooks = id => dispatch => {
 }
 
 export const deleteReadBook = readBook_id => dispatch => {
+  debugger
   return (
     APIUtil.removeReadBook(readBook_id).then(
       readBook_id => dispatch(removeReadBook(readBook_id)))

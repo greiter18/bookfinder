@@ -3,12 +3,11 @@ const Schema = mongoose.Schema;
 
 const ReadbookSchema = new Schema({
   user_id: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'users'
   },
   book_id: {
-    type: Schema.Types.ObjectId,
-    ref: 'books'
+    type: String,
   },
   title: {
     type: String

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
+const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
   const authors = book?.authors?.join(", ");
   const bookInfo = {
     title: book.title, 
@@ -11,22 +11,25 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
     }
 
   const addToWishlist = () => {
-    // if(currentUser){
-    //   return (<button  onClick={() => addBook(bookId, currentUser)}>Add to wishlist</button>)
-    // } else {
-    //   return '';
-    // }
-    if(currentUser){
+    if(currentUser.id){
       return (<button  onClick={() => addBook(bookInfo, currentUser)}>Add to wishlist</button>)
     } else {
       return '';
     }
   }
 
+  const addToReadBooks = () => {
+    if(currentUser.id){
+      return (<button onClick={() => addReadBook(bookInfo)}>Read</button>)
+    } else {
+      return ''
+    }
+  }
+
 	return (
 		<div className="book_item">
 			{/* <h1>Book #{book.id}</h1> */}
-      {console.log('booookinfooo', bookInfo)}
+      {/* {console.log('booookinfooo', bookInfo)} */}
 			<h2>{book.title}</h2>
 			<h3>Author(s): {authors}</h3>
 			<a href={book.infoLink} target="_blank" rel="noopener noreferrer">
@@ -35,6 +38,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser }) => {
 			<p>{book.description}</p>
 			{/* <button  onClick={() => addBook({bookId, currentUser})}>Add to wishlist</button> */}
       {addToWishlist()}
+      {addToReadBooks()}
 		</div>
 	);
 };

@@ -1,13 +1,19 @@
 import axios from 'axios';
 
 export const fetchReadBooks = (id) => {
-  return axios.get(`/api/readlists/user/${id}`)
+  // debugger
+  return axios.get(`/api/readbooks/user/${id}`)
 }
 
 export const addReadBook = book => {
-  return axios.post(``, book)
+  // debugger
+  return (
+    axios.post(`/api/readbooks/`, book))
 } 
 
 export const removeReadBook = readBook_id => {
-  return axios.delete('', readBook_id)
+  debugger
+  return (
+    axios.delete(`/api/readbooks/${readBook_id}`)
+  )
 }

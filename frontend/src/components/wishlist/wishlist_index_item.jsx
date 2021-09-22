@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios";
 
 const WishlistIndexItem = ({book, removeBook, addReadBook}) => {
-
 
   return(
     <div className="wishListItem">

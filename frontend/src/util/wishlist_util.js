@@ -23,5 +23,4 @@ export const remove_book = id => {
     return(
       axios.get(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
     )
-    //
   } 

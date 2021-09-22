@@ -18,7 +18,7 @@ const NavBar = ({logout, loggedIn, user}) => {
                 <i class="fa-solid fa-books"></i>
                 <Link to={'/wishlist'}>Wish List</Link>
                 <i class="fa-solid fa-books"></i>
-                <Link to={'/readlist'}>Read List</Link>
+                <Link to={'/readbooks'}>Read List</Link>
               </div>
               <button onClick={logoutUser}>Logout</button>
             </div>

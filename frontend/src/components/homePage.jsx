@@ -4,7 +4,7 @@ import BookIndexItem from "./book_index_item";
 import Pagination from "./pagination";
 
 
-const HomePage = ({currentUser, addBook}) => {
+const HomePage = ({currentUser, addBook, addReadBook}) => {
 	const [book, setBook] = useState("");
 	const [bookList, setBookList] = useState([]);
 	const [totalBooks, setTotalBooks] = useState(0);
@@ -39,12 +39,11 @@ const HomePage = ({currentUser, addBook}) => {
 	};
 
 	const list = bookList.map((book) => {
-		return <BookIndexItem book={book.volumeInfo} key={book.id} bookId={book.id} currentUser={currentUser} addBook={addBook}/>;
+		return <BookIndexItem book={book.volumeInfo} key={book.id} bookId={book.id} currentUser={currentUser} addBook={addBook} addReadBook={addReadBook}/>;
 	});
 
 	return (
 		<div>
-      {console.log('currentuser',currentUser?.id)}
 			<h1>Bookfinder</h1>
 			<form onSubmit={handleSubmit}>
 				What book do you want

@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", users);// if it does match we send in the users object
 app.use("/api/books", books);
 app.use("/api/wishlists", wishlists);
-app.use("api/readbooks", readbooks)
+app.use("/api/readbooks", readbooks)
 
 const port = process.env.PORT || 5000; // listen to production port or 5000
 
