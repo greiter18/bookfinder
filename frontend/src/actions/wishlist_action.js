@@ -29,13 +29,6 @@ export const removeBook = wishlistId => {
   })
 }
 
-// export const receiveBookFromList = book => {
-//   return ({
-//     type: RECEIVE_BOOK_FROM_LIST,
-//     book
-//   })
-// }
-
 export const add_Book = (book, currentUser) => dispatch => {
   // debugger
   return (
@@ -43,12 +36,6 @@ export const add_Book = (book, currentUser) => dispatch => {
     wishlists => dispatch(receiveWishlist(wishlists))
   )
   )}
-// export const add_Book = (book, currentUser) => dispatch => {
-//   debugger
-//   return (
-//   APIUtil.add_Book(book, currentUser)
-//   )
-//   }
 
 export const remove_book = wishlistId => dispatch => {
   debugger
@@ -65,10 +52,3 @@ export const fetchWishlist = (id) => dispatch => {
       wishlists => dispatch(receiveWishlists(wishlists)))
   )
 }
-
-// export const fetchBooks = id => dispatch => {
-//   return (
-//   APIUtil.fetchbookCall(id).then(
-//     bookData => dispatch(receiveBookFromList(bookData)))
-//   )
-// }

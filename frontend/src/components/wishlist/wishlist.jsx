@@ -4,7 +4,7 @@ import WishlistIndexItem from './wishlist_index_item';
 //hf5f3r38P1cC - tester
 //jWAsAAAAQBAJ
 
-const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book }) => {
+const Wishlist = ({addReadBook,currentUser, wishlists, fetchWishlist, remove_book }) => {
   useEffect(() => {
     fetchWishlist(currentUser.id)
   }, [])
@@ -28,7 +28,7 @@ const Wishlist = ({currentUser, wishlists, fetchWishlist, remove_book }) => {
 
 
     const setWishlist = wishlists.map(book => {
-      return <WishlistIndexItem book={book} removeBook={remove_book}/>
+      return <WishlistIndexItem book={book} removeBook={remove_book} addReadBook={addReadBook}/>
     })
 
   return (

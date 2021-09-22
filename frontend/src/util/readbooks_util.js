@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const fetchReadLists = (user_id) => {
-  return axios.get(`/api/readlists/user/${user_id}`)
+export const fetchReadBooks = (id) => {
+  return axios.get(`/api/readlists/user/${id}`)
 }
 
 export const addReadBook = book => {

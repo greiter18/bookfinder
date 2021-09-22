@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-const WishlistIndexItem = ({book, removeBook}) => {
+const WishlistIndexItem = ({book, removeBook, addReadBook}) => {
+
 
   return(
     <div className="wishListItem">
@@ -13,7 +14,7 @@ const WishlistIndexItem = ({book, removeBook}) => {
       </a>
       {/* <button onClick={() => removeBook(book._id)}>Remove From Wishlist</button> */}
       <i class="fa fa-trash-o" aria-hidden="true" onClick={() => removeBook(book._id)}></i>
-      {/* <button onClick={() => addToReadList()}></button> */}
+      <button onClick={() => addReadBook(book)}>Read</button>
     </div>
   )
 }
