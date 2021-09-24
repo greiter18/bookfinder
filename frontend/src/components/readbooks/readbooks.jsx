@@ -12,7 +12,7 @@ const Readbook = ({readbooks, fetchReadBooks, currentUser, deleteReadBook}) => {
   })
   return (
     <div>
-      Read Book Container
+      <h1>Read Books</h1>
       {setReadBooks}
     </div>
   )

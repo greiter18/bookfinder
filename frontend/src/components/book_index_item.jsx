@@ -11,7 +11,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
     }
 
   const addToWishlist = () => {
-    if(currentUser.id){
+    if(currentUser?.id){
       return (<button  onClick={() => addBook(bookInfo, currentUser)}>Add to wishlist</button>)
     } else {
       return '';
@@ -19,7 +19,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
   }
 
   const addToReadBooks = () => {
-    if(currentUser.id){
+    if(currentUser?.id){
       return (<button onClick={() => addReadBook(bookInfo)}>Read</button>)
     } else {
       return ''

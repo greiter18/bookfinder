@@ -19,12 +19,12 @@ router.post("/",
 passport.authenticate("jwt", {session: false}),
   (req, res) => {
     debugger
-    // console.log('readbok req-------',req.body)
+    console.log('readbok req-------',req.body)
     const newReadbook = new ReadBook({
       user_id: req.user.id,
       book_id: req.body.bookId,
       title: req.body.title,
-      author: req.body.authors,
+      author: req.body.author,
       link: req.body.link,
       image: req.body.image,
       rating: 0
@@ -32,7 +32,7 @@ passport.authenticate("jwt", {session: false}),
     newReadbook.save()
     .then(readbook => {
       debugger
-      // console.log('readbook response',readbook)
+      console.log('readbook response',readbook)
       return res.json(readbook);
     })
   }
