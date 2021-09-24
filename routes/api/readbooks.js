@@ -27,7 +27,8 @@ passport.authenticate("jwt", {session: false}),
       author: req.body.author,
       link: req.body.link,
       image: req.body.image,
-      rating: 0
+      rating: 0,
+      comment: ''
     })
     newReadbook.save()
     .then(readbook => {

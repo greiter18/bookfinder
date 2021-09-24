@@ -24,6 +24,10 @@ const ReadbookSchema = new Schema({
   rating: {
     type: Number,
     required: false
+  },
+  comment: {
+    type: String,
+    required: false
   }
 })
 
