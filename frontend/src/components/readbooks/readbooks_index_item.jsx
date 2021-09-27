@@ -15,6 +15,7 @@ const ReadBooksIndexItem = ({book , deleteReadBook}) => {
       </a>
       <p>Rating</p>
       <RatingStars/>
+      <textarea name="" id="" value={book.comment} placeholder="What did you think of the book?"></textarea>
       <button onClick={() => deleteReadBook(book._id)}>Remove</button>
     </div>
   )
