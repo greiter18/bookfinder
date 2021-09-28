@@ -3,16 +3,24 @@
   // background-image: url('booksimage.jpeg');
   // background-size: 40%;
   // color: white;
+  display: flex;
+  justify-content:space-between;
+  font-size: 25px
 }
 
 .navBarLinks{
   display: flex;
-  flex-direction: column;
   color:white;
+  justify-content:space-between
 }
 
 .navBarlinksLinks{
   display: flex;
   flex-direction: column;
   color:white;
+}
+
+.notSignedInbutton{
+  display: flex;
+  flex-direction:column;
 }

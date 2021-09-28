@@ -1,1 +1,10 @@
-@import 'navbar'
+@import 'reset';
+@import 'navbar';
+@import 'mainpage';
+@import 'stars';
+@import 'readbooks';
+
+button {
+  width: fit-content;
+}
+

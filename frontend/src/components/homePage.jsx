@@ -44,13 +44,16 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
 
 	return (
 		<div>
-			<h1>Bookfinder</h1>
-			<form onSubmit={handleSubmit} className="bookForm">
-				<p>What book do you want find?</p> 
-				<input type="text" onChange={handleChange} />
-        <br/>
-				<button>Find Book</button>
-			</form>
+      <div className="mainPageSearch">
+        <form onSubmit={handleSubmit} className="bookForm">
+          <p>What book do you want find?</p> 
+          <label className="searchBox">
+            <input  type="text" onChange={handleChange} />
+          </label>
+          <br/>
+          <button className="searchButton">Find Book</button>
+        </form>
+      </div>
 			<div id="content">{list}</div>
 			{/* <Pagination data={totalBooks} dataLimit={totalBooksShown} /> */}
 		</div>

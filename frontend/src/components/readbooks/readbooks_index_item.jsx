@@ -4,9 +4,9 @@ import RatingStars from './ratingstar'
 const ReadBooksIndexItem = ({book , deleteReadBook}) => {
 
   return(
-    <div>
+    <div className="readBook">
       {console.log('redbookindex item ++++++++',book._id)}
-      <div>
+      <div >
        <p>Title: {book.title}</p> 
        <p>Author: {book.author}</p> 
       </div>

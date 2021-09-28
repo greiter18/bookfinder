@@ -13,7 +13,6 @@ const NavBar = ({logout, loggedIn, user}) => {
         return (
             <div className="navBarLinks">
                <h3>Hi {user}</h3>
-               {/* {console.log(user)} */}
                <div className="navBarlinksLinks">
                 <i class="fa-solid fa-books"></i>
                 <Link to={'/wishlist'}>Wish List</Link>
@@ -25,7 +24,7 @@ const NavBar = ({logout, loggedIn, user}) => {
         );
       } else {
         return (
-            <div className="navBarLinks">
+            <div className="notSignedInbutton">
                 <Link to='/signup'>Signup</Link>
                 <Link to='/login'>Login</Link>
             </div>
@@ -35,7 +34,6 @@ const NavBar = ({logout, loggedIn, user}) => {
   
   return (
     <div className="NavbarMain">
-      
        <h1><Link to={'/'}> Bookfinder</Link></h1> 
        <h3>Happy Reading!</h3>
         { getLinks() }
