@@ -11,16 +11,19 @@
 .navBarLinks{
   display: flex;
   color:white;
-  justify-content:space-between
+  justify-content:space-between;
+  font-size: 15px;
 }
 
 .navBarlinksLinks{
   display: flex;
   flex-direction: column;
   color:white;
+  font-size: 15px;
 }
 
 .notSignedInbutton{
   display: flex;
   flex-direction:column;
+  font-size: 15px;
 }

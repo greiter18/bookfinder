@@ -25,8 +25,8 @@ const NavBar = ({logout, loggedIn, user}) => {
       } else {
         return (
             <div className="notSignedInbutton">
-                <Link to='/signup'>Signup</Link>
-                <Link to='/login'>Login</Link>
+                <Link to='/signup'>Sign-up</Link>
+                <Link to='/login'>Log-in</Link>
             </div>
         );
       }
