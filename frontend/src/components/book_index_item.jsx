@@ -28,17 +28,17 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
 
 	return (
 		<div className="book_item">
-			{/* <h1>Book #{book.id}</h1> */}
-      {/* {console.log('booookinfooo', bookInfo)} */}
-			<h2>{book.title}</h2>
-			<h3>Author(s): {authors}</h3>
-			<a href={book.infoLink} target="_blank" rel="noopener noreferrer">
+      <a href={book.infoLink} target="_blank" rel="noopener noreferrer">
 				<img src={book.imageLinks?.thumbnail} alt="book thumbnail" />
 			</a>
-			<p>{book.description}</p>
-			{/* <button  onClick={() => addBook({bookId, currentUser})}>Add to wishlist</button> */}
-      {addToWishlist()}
-      {addToReadBooks()}
+      <div className="bookiteminfo">
+        <h2 className="mainbooktitle">{book.title}</h2>
+        <h3>By {authors}</h3>
+        <p>{book.description}</p>
+        {/* <button  onClick={() => addBook({bookId, currentUser})}>Add to wishlist</button> */}
+        {addToWishlist()}
+        {addToReadBooks()}
+      </div>
 		</div>
 	);
 };

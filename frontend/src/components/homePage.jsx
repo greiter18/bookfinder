@@ -46,7 +46,7 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
 		<div>
       <div className="mainPageSearch">
         <form onSubmit={handleSubmit} className="bookForm">
-          <p>What book do you want find?</p> 
+          <p className="mainTitle">What book do you want find?</p> 
           <label className="searchBox">
             <input  type="text" onChange={handleChange} />
           </label>

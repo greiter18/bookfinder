@@ -15,7 +15,7 @@ const NavBar = ({logout, loggedIn, user}) => {
                <h3>Hi {user}</h3>
                <div className="navBarlinksLinks">
                 <i class="fa-solid fa-books"></i>
-                <Link to={'/wishlist'}>Wish List</Link>
+                <Link to={'/wishlist'} id='wishlistbtn'>Wish List</Link>
                 <i class="fa-solid fa-books"></i>
                 <Link to={'/readbooks'}>Read List</Link>
               </div>
@@ -25,7 +25,7 @@ const NavBar = ({logout, loggedIn, user}) => {
       } else {
         return (
             <div className="notSignedInbutton">
-                <Link to='/signup'>Sign-up</Link>
+                <Link id='signupbtn' to='/signup'>Sign-up</Link>
                 <Link to='/login'>Log-in</Link>
             </div>
         );
@@ -34,7 +34,7 @@ const NavBar = ({logout, loggedIn, user}) => {
   
   return (
     <div className="NavbarMain">
-       <h1><Link to={'/'}> Bookfinder</Link></h1> 
+       <h1 className="mainHeading"><Link to={'/'}> Bookfinder</Link></h1> 
        <h3>Happy Reading!</h3>
         { getLinks() }
     </div>

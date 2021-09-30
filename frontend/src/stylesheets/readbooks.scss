@@ -16,9 +16,41 @@
 // .off {
 //   color: #ccc;
 // }
-
+.star{
+  display: flex;
+}
+.checked {
+  color: orange;
+}
 .readBook{
   display: flex;
-  flex-direction:column;
-  align-items: center;
+  // flex-direction:column;
+  // align-items: center;
+  // justify-content:space-around
+}
+
+.readImage{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.readBookInfo{
+  display: flex;
+  flex-direction: column;
+}
+
+
+ #button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-text-stroke: 1px black;
+}
+.on {
+  color: yellow;
+}
+.off {
+  color: #ccc;
 }

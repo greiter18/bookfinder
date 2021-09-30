@@ -23,13 +23,24 @@
   border-radius: 10px;
 }
 
+.searchButton:hover{
+  background-color: red;
+  cursor: pointer;
+}
+
 .mainPageSearch{
   display: flex;
   justify-content:center;
   background-image: url('books.jpeg');
   background-size: 40%;
-  font-size: 50px;
   color: white;;
   font-weight: bold;
+  font-size: 50px;
+  
+}
+
+.mainTitle{
   -webkit-text-stroke: 2px black;
 }
+
+
