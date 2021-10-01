@@ -28,8 +28,8 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
 
 	return (
 		<div className="book_item">
-      <a href={book.infoLink} target="_blank" rel="noopener noreferrer">
-				<img src={book.imageLinks?.thumbnail} alt="book thumbnail" />
+      <a href={book.infoLink} className='mainbookimageA' target="_blank" rel="noopener noreferrer">
+				<img className="mainbookimage" src={book.imageLinks?.thumbnail} alt={book.title} />
 			</a>
       <div className="bookiteminfo">
         <h2 className="mainbooktitle">{book.title}</h2>
