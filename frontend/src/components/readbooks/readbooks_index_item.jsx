@@ -7,8 +7,8 @@ const ReadBooksIndexItem = ({book , deleteReadBook}) => {
   return(
     <div className="readBook">
       <div className="readImage">
-        <a href={book.link} target="_blank">
-        <img src={book?.image} alt={book?.title} />
+        <a href={book.link} target="_blank" className='mainbookimageA'>
+        <img src={book?.image} alt={book?.title} className="mainbookimage"/>
         </a>
         <StarRating/>
       </div>

@@ -9,8 +9,8 @@ const WishlistIndexItem = ({book, removeBook, addReadBook}) => {
         Title: {book.title}
         Author: {book.author}
       </div>
-      <a href={book.link} target="_blank">
-       <img src={book?.image} alt={book?.title} />
+      <a href={book.link} target="_blank" className='mainbookimageA'>
+       <img src={book?.image} alt={book?.title} className="mainbookimage" />
       </a>
       <div>
         <i class="fa fa-trash-o" aria-hidden="true" onClick={() => removeBook(book._id)}></i>
