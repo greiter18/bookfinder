@@ -3,14 +3,18 @@
   flex-direction:column;
   // margin: auto;
   align-items: center;
+  justify-content: space-around;
+}
+
+.searchBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .searchBox input[type='text']{
   border-radius: 10px;
-  height: 70%;
   width: 300%;
-  position: relative;
-  right: 80%;
   font-size: 20px;
 }
 
@@ -37,11 +41,12 @@
   font-weight: bold;
   font-size: 50px;
   background-position: center;
+  height: 4em;
   
 }
 
 .mainTitle{
-  -webkit-text-stroke: 2px black;
+  text-shadow: 2px 2px 4px black;
 }
 
 

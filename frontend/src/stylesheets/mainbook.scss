@@ -13,8 +13,8 @@
 
 .mainbookimage{
   height: 100%;
-  // border: 3px solid rgb(185, 121, 121);
-  margin:auto
+  width: 5em;
+  object-fit: scale-down;//needs height and width
 }
 
 // .mainbookimage a{ 

@@ -50,7 +50,6 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
           <label className="searchBox">
             <input  type="text" onChange={handleChange} />
           </label>
-          <br/>
           <button className="searchButton">Find Book</button>
         </form>
       </div>

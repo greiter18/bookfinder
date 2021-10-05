@@ -1,16 +1,16 @@
 .loginMain{
     display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    align-items: center;
-    border: 1px solid black;
-    margin: auto;
-    width: -moz-fit-content;
-    padding: 1% 5%;
-    width: fit-content;
-    margin-top: 10%;
-    border-radius: 5px;
-    background-color: white;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  margin: auto;
+  width: -moz-fit-content;
+  padding: 1% 5%;
+  width: fit-content;
+  margin-top: 10%;
+  border-radius: 5px;
+  background-color: white;
 }
 
 .loginMain h1{
@@ -23,10 +23,16 @@
   background-color: #e8e8e7;
   padding-top: 1%;
   padding-bottom: 27%;
+  height: 100vh;
 }
 
-.logininputs{
-  // width: 300px;
+.logininputs input{
+  width: 300px;
+  padding-left: 3%;
+  color: red;
+  /* background: blue; */
+  /* padding-bottom: 3%; */
+  margin: 5px 0px;
 }
 
 .loginform :first-child{

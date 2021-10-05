@@ -65,9 +65,9 @@ const LoginForm = ({login, errors}) => {
                   placeholder="Password"
                 />
               <br/>
+              </div>
               <input type="submit" value="Log In" />
               {renderErrors()}
-            </div>
           </form>
         </div>
       </div>
