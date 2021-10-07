@@ -39,7 +39,7 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
 	};
 
 	const list = bookList.map((book) => {
-		return <BookIndexItem book={book.volumeInfo} key={book.id} bookId={book.id} currentUser={currentUser} addBook={addBook} addReadBook={addReadBook}/>;
+		return <li> <BookIndexItem book={book.volumeInfo} key={book.id} bookId={book.id} currentUser={currentUser} addBook={addBook} addReadBook={addReadBook}/> </li>
 	});
 
 	return (
@@ -48,13 +48,15 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
         <form onSubmit={handleSubmit} className="bookForm">
           <p className="mainTitle">What book do you want find?</p> 
           <label className="searchBox">
-            <input  type="text" onChange={handleChange} />
+            <input  type="text" onChange={handleChange} placeholder="Book Title" />
           </label>
-          <button className="searchButton">Find Book</button>
+          <button className="searchButton" >Find Book</button>
         </form>
       </div>
-			<div id="content">{list}</div>
+      <ul>
+			  <div id="content">{list}</div>
 			{/* <Pagination data={totalBooks} dataLimit={totalBooksShown} /> */}
+      </ul>
 		</div>
 	);
 };

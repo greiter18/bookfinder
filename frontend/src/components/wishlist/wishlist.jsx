@@ -10,13 +10,14 @@ const Wishlist = ({addReadBook,currentUser, wishlists, fetchWishlist, remove_boo
   }, [])
 
   const setWishlist = wishlists.map(book => {
-    return <WishlistIndexItem book={book} removeBook={remove_book} addReadBook={addReadBook}/>
+    return <li>  <WishlistIndexItem book={book} removeBook={remove_book} addReadBook={addReadBook}/> </li>
   })
 
   return (
     <div>
       <h1>Wishlist page</h1>  
-      {setWishlist}
+      <ul> {setWishlist} </ul>
+      
     </div>
   )
 }

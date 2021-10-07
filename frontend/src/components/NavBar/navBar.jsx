@@ -12,14 +12,26 @@ const NavBar = ({logout, loggedIn, user}) => {
       if (loggedIn) {
         return (
             <div className="navBarLinks">
-               <h3>Hi {user}</h3>
+              {/* <div className="navBarLinkstop">
+                <h3>Hi {user}</h3>
+                <button onClick={logoutUser}>Logout</button>
+               </div>
                <div className="navBarlinksLinks">
                 <i class="fa-solid fa-books"></i>
                 <Link to={'/wishlist'} id='wishlistbtn'>Wish List</Link>
                 <i class="fa-solid fa-books"></i>
                 <Link to={'/readbooks'}>Read List</Link>
+              </div> */}
+
+            <div class="dropdown">
+              <button class="dropbtn">{user}</button>
+              <div class="dropdown-content">
+                <Link to={'/readbooks'}>Read List</Link>
+                <Link to={'/wishlist'} id='wishlistbtn'>Wish List</Link>
+                <a onClick={logoutUser}>Sign Out</a>
               </div>
-              <button onClick={logoutUser}>Logout</button>
+            </div>
+
             </div>
         );
       } else {
