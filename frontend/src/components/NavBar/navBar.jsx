@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom'
 
-const NavBar = ({logout, loggedIn, user}) => {
+const NavBar = ({
+  logout, loggedIn, user, currentUser, store, fetchWishlist, fetchReadBooks
+  }) => {
+
+  useEffect(() => {
+    fetchWishlist(currentUser?.id)
+  }, [])
+  useEffect(() => {
+    fetchReadBooks(currentUser?.id)
+  }, [])
 
   const logoutUser = (e) => {
       e.preventDefault();
       logout();
+  }
+
+  const readCount = () => {
+    return Object?.values(store?.readbooks)?.length
+  }
+  const wishCount = () => {
+    return Object?.values(store?.wishlists)?.length
   }
   
   const getLinks = () => {  // Selectively render links dependent on whether the user is logged in
@@ -22,12 +38,11 @@ const NavBar = ({logout, loggedIn, user}) => {
                 <i class="fa-solid fa-books"></i>
                 <Link to={'/readbooks'}>Read List</Link>
               </div> */}
-
             <div class="dropdown">
-              <button class="dropbtn">{user}</button>
+              <button class="dropbtn">{user}  <i class="fas fa-address-book"></i></button>
               <div class="dropdown-content">
-                <Link to={'/readbooks'}>Read List</Link>
-                <Link to={'/wishlist'} id='wishlistbtn'>Wish List</Link>
+                <Link to={'/readbooks'}> ({readCount()}) Read List</Link>
+                <Link to={'/wishlist'}> ({wishCount()}) Wish List</Link>
                 <a onClick={logoutUser}>Sign Out</a>
               </div>
             </div>

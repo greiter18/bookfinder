@@ -25,29 +25,29 @@
   color:black;
 }
 
-.navBarLinkstop{
-  display: flex;
-  justify-content: space-around;
-}
+// .navBarLinkstop{
+//   display: flex;
+//   justify-content: space-around;
+// }
 
-.navBarlinksLinks{
-  color:black;
-  font-size: 15px;
-}
+// .navBarlinksLinks{
+//   color:black;
+//   font-size: 15px;
+// }
 
-.navBarlinksLinks a {
-  text-decoration: none;
-  color:black;
-}
+// .navBarlinksLinks a {
+//   text-decoration: none;
+//   color:black;
+// }
 
-.navBarlinksLinks a:hover{
-  background-color:gray;
-}
+// .navBarlinksLinks a:hover{
+//   background-color:gray;
+// }
 
-#wishlistbtn{
-  position: relative;
-  right: 15%;
-}
+// #wishlistbtn{
+//   position: relative;
+//   right: 15%;
+// }
 
 .notSignedInbutton{
 }
@@ -72,8 +72,8 @@
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #04AA6D;
-  color: white;
+  background-color: rgb(242, 239, 231);
+  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -89,25 +89,35 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  background-color: rgb(242, 239, 231);
+  // min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  font-size: 10px;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 12px 5px;
   text-decoration: none;
   display: block;
+  font-size: 16px;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: rgb(50,39,19);
+  color: rgb(242, 239, 231);;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {
+  background-color: rgb(50,39,19);
+  color: rgb(242, 239, 231);;
+}
