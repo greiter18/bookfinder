@@ -33,7 +33,7 @@ export const add_Book = (book, currentUser) => dispatch => {
   // debugger
   return (
   APIUtil.add_Book(book, currentUser).then(
-    wishlists => dispatch(receiveWishlist(wishlists))
+    wishlists => dispatch(receiveWishlists(wishlists))
   )
   )}
 

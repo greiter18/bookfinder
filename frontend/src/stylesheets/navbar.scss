@@ -21,34 +21,6 @@
   color: black;
 }
 
-.navBarLinks{
-  color:black;
-}
-
-// .navBarLinkstop{
-//   display: flex;
-//   justify-content: space-around;
-// }
-
-// .navBarlinksLinks{
-//   color:black;
-//   font-size: 15px;
-// }
-
-// .navBarlinksLinks a {
-//   text-decoration: none;
-//   color:black;
-// }
-
-// .navBarlinksLinks a:hover{
-//   background-color:gray;
-// }
-
-// #wishlistbtn{
-//   position: relative;
-//   right: 15%;
-// }
-
 .notSignedInbutton{
 }
 
@@ -75,7 +47,7 @@
   background-color: rgb(242, 239, 231);
   color: black;
   padding: 16px;
-  font-size: 16px;
+  font-size: 24px;
   border: none;
 }
 
@@ -93,7 +65,8 @@
   // min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  font-size: 10px;
+  font-size: 20px;
+  width: 100%;
 }
 
 /* Links inside the dropdown */
@@ -102,7 +75,7 @@
   padding: 12px 5px;
   text-decoration: none;
   display: block;
-  font-size: 16px;
+  // font-size: 16px;
 }
 
 /* Change color of dropdown links on hover */

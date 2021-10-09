@@ -1,16 +1,37 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom'
 
 const NavBar = ({
   logout, loggedIn, user, currentUser, store, fetchWishlist, fetchReadBooks
   }) => {
 
-  useEffect(() => {
-    fetchWishlist(currentUser?.id)
-  }, [])
+  const [wishlist, setWishlit] = useState(store.wishlists);
+  const [readbook, setReadbook] = useState(store.readbooks);
+  const [ourUser, setOurUser] = useState(currentUser);
+  
+  // useEffect(() => {
+  //   fetchWishlist(currentUser?.id)
+  // }, [])
+  
+  // useEffect(() => {
+  //   fetchReadBooks(currentUser?.id)
+  // }, [])
+
   useEffect(() => {
     fetchReadBooks(currentUser?.id)
-  }, [])
+  }, [currentUser])
+
+  useEffect(() => {
+    fetchWishlist(currentUser?.id)
+  }, [currentUser])
+
+  // useEffect(() => {
+  //   fetchWishlist(currentUser?.id)
+  // }, [store.wishlists])
+
+  // useEffect(() => {
+  //   fetchReadBooks(currentUser?.id)
+  // }, [store.readbooks])
 
   const logoutUser = (e) => {
       e.preventDefault();
@@ -27,26 +48,15 @@ const NavBar = ({
   const getLinks = () => {  // Selectively render links dependent on whether the user is logged in
       if (loggedIn) {
         return (
-            <div className="navBarLinks">
-              {/* <div className="navBarLinkstop">
-                <h3>Hi {user}</h3>
-                <button onClick={logoutUser}>Logout</button>
-               </div>
-               <div className="navBarlinksLinks">
-                <i class="fa-solid fa-books"></i>
-                <Link to={'/wishlist'} id='wishlistbtn'>Wish List</Link>
-                <i class="fa-solid fa-books"></i>
-                <Link to={'/readbooks'}>Read List</Link>
-              </div> */}
-            <div class="dropdown">
-              <button class="dropbtn">{user}  <i class="fas fa-address-book"></i></button>
-              <div class="dropdown-content">
-                <Link to={'/readbooks'}> ({readCount()}) Read List</Link>
-                <Link to={'/wishlist'}> ({wishCount()}) Wish List</Link>
-                <a onClick={logoutUser}>Sign Out</a>
+            <div>
+              <div class="dropdown">
+                <button class="dropbtn">{user}  <i class="fas fa-address-book"></i></button>
+                <div class="dropdown-content">
+                  <Link to={'/readbooks'}> ({readCount()}) Read List</Link>
+                  <Link to={'/wishlist'}> ({wishCount()}) Wish List</Link>
+                  <a onClick={logoutUser}>Sign Out</a>
+                </div>
               </div>
-            </div>
-
             </div>
         );
       } else {
@@ -61,6 +71,8 @@ const NavBar = ({
   
   return (
     <div className="NavbarMain">
+      {console.log('wishhhhh----',wishCount())}
+      {console.log('user----', ourUser)}
        <h1 className="mainHeading"><Link to={'/'}> Bookfinder</Link></h1> 
        <h3>Happy Reading!</h3>
         { getLinks() }

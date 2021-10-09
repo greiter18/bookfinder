@@ -28,13 +28,34 @@ console.log('reqqqqqqqqqquserrrrrr',req.user)
     image: req.body.image
     })
     newWishlist.save()
-    .then(wishlist => {
-      debugger
-      console.log('wihslisttttt',wishlist)
-      return res.json(wishlist)
-    })
+    Wishlist.find({user_id: req.user.id})
+      .then((wishlists) => res.json(wishlists))
+      .catch((err) => res.status(400).json(err));
   }
 )
+
+// router.post("/",
+// passport.authenticate("jwt", {session: false}),
+// (req, res) => {
+// debugger  
+// console.log('reqqqqqqqqqqbodddyyy',req.body)
+// console.log('reqqqqqqqqqquserrrrrr',req.user)
+//   const newWishlist = new Wishlist({
+//     user_id: req.user.id,
+//     book_id: req.body.bookId,
+//     title: req.body.title,
+//     author: req.body.authors,
+//     link: req.body.link,
+//     image: req.body.image
+//     })
+//     newWishlist.save()
+//     .then(wishlist => {
+//       debugger
+//       console.log('wihslisttttt',wishlist)
+//       return res.json(wishlist)
+//     })
+//   }
+// )
 
 router.delete("/:wishlist_id",
 passport.authenticate("jwt", {session: false}),
