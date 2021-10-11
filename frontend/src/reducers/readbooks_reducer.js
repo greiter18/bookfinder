@@ -11,8 +11,14 @@ export default function(state = {}, action){
       }
       return readObj;
     case RECEIVE_READBOOK:
-      // debugger
-      return action.readBook.data
+      const newerState = Object.assign({},state)
+      //make a copy of the store
+      //add the new book to the store w proper key and value
+      //return new store
+      debugger
+      console.log(action)
+      newerState[action.readBook.data._id] = action.readBook.data
+      return newerState
     case REMOVE_READBOOK:
       debugger
       const newState = Object.assign({}, state)

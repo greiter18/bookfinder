@@ -7,7 +7,7 @@ export const fetchWishlist =  (user_id) => {
   )
 }
 
-export const add_Book = (book, currentUser) => {
+export const add_Book = (book) => {
   // debugger
   return (
   axios.post(`/api/wishlists/`, book)

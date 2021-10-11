@@ -5,7 +5,7 @@ const NavBar = ({
   logout, loggedIn, user, currentUser, store, fetchWishlist, fetchReadBooks
   }) => {
 
-  const [wishlist, setWishlit] = useState(store.wishlists);
+  const [wishlist, setWishlist] = useState(store.wishlists);
   const [readbook, setReadbook] = useState(store.readbooks);
   const [ourUser, setOurUser] = useState(currentUser);
   
@@ -25,9 +25,9 @@ const NavBar = ({
     fetchWishlist(currentUser?.id)
   }, [currentUser])
 
-  // useEffect(() => {
-  //   fetchWishlist(currentUser?.id)
-  // }, [store.wishlists])
+  useEffect(() => {
+    setWishlist(store.wishlists)
+  }, [store.wishlists])
 
   // useEffect(() => {
   //   fetchReadBooks(currentUser?.id)
@@ -42,7 +42,8 @@ const NavBar = ({
     return Object?.values(store?.readbooks)?.length
   }
   const wishCount = () => {
-    return Object?.values(store?.wishlists)?.length
+    
+    return Object?.values(wishlist).length
   }
   
   const getLinks = () => {  // Selectively render links dependent on whether the user is logged in
