@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { withRouter } from 'react-router';
 import HomePage from "./homePage";
-import {add_Book} from "../actions/wishlist_action"
-import {addReadBook} from "../actions/readbooks_actions"
+import {add_Book} from "../../actions/wishlist_action"
+import {addReadBook} from "../../actions/readbooks_actions"
 
 const mstp = store => ({
   currentUser: store.session.user 

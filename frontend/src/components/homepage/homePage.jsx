@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import BookIndexItem from "./book_index_item";
-import Pagination from "./pagination";
+import Pagination from "../pagination";
 
 
 const HomePage = ({currentUser, addBook, addReadBook}) => {
@@ -50,7 +50,7 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
           <label className="searchBox">
             <input  type="text" onChange={handleChange} placeholder="Book Title" />
           </label>
-          <button className="searchButton" >Find Book</button>
+          <button className="searchButton" >Find Book</button> {/* this is going to be a link {/search/searchbox} */}
         </form>
       </div>
       <ul>

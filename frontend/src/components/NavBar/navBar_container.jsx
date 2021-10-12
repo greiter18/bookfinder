@@ -4,7 +4,6 @@ import NavBar from './navBar';
 import {fetchWishlist} from '../../actions/wishlist_action';
 import {fetchReadBooks} from "../../actions/readbooks_actions";
 
-
 const mstp = store => ({
   loggedIn: store.session.isAuthenticated,
   user: store.session.user?.username,

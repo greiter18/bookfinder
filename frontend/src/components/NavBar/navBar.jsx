@@ -5,9 +5,9 @@ const NavBar = ({
   logout, loggedIn, user, currentUser, store, fetchWishlist, fetchReadBooks
   }) => {
 
-  const [wishlist, setWishlist] = useState(store.wishlists);
-  const [readbook, setReadbook] = useState(store.readbooks);
-  const [ourUser, setOurUser] = useState(currentUser);
+  // const [wishlist, setWishlist] = useState(store.wishlists);
+  // const [readbook, setReadbook] = useState(store.readbooks);
+  // const [ourUser, setOurUser] = useState(currentUser);
   
   // useEffect(() => {
   //   fetchWishlist(currentUser?.id)
@@ -19,15 +19,16 @@ const NavBar = ({
 
   useEffect(() => {
     fetchReadBooks(currentUser?.id)
-  }, [currentUser])
-
-  useEffect(() => {
     fetchWishlist(currentUser?.id)
   }, [currentUser])
 
-  useEffect(() => {
-    setWishlist(store.wishlists)
-  }, [store.wishlists])
+  // useEffect(() => {
+  //   fetchWishlist(currentUser?.id)
+  // }, [currentUser])
+
+  // useEffect(() => {
+  //   setWishlist(store.wishlists)
+  // }, [store.wishlists])
 
   // useEffect(() => {
   //   fetchReadBooks(currentUser?.id)
@@ -42,8 +43,7 @@ const NavBar = ({
     return Object?.values(store?.readbooks)?.length
   }
   const wishCount = () => {
-    
-    return Object?.values(wishlist).length
+    return Object?.values(store?.wishlists)?.length
   }
   
   const getLinks = () => {  // Selectively render links dependent on whether the user is logged in
@@ -72,11 +72,9 @@ const NavBar = ({
   
   return (
     <div className="NavbarMain">
-      {console.log('wishhhhh----',wishCount())}
-      {console.log('user----', ourUser)}
-       <h1 className="mainHeading"><Link to={'/'}> Bookfinder</Link></h1> 
-       <h3>Happy Reading!</h3>
-        { getLinks() }
+      <h1 className="mainHeading"><Link to={'/'}>Bookfinder</Link></h1> 
+      <h3>Happy Reading!</h3>
+      { getLinks() }
     </div>
   );
 }

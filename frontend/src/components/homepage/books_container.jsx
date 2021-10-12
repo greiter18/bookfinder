@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { receiveAllBooks } from '../actions/books_action';
 import { withRouter } from 'react-router';
 import HomePage from './homePage';
-import add_Book from '../actions/wishlist_action'
+import add_Book from '../../actions/wishlist_action'
 
 const mstp = state => ({
   books: state.books

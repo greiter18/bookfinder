@@ -3,7 +3,7 @@ import { AuthRoute, ProtectedRoute } from './util/route_util';
 import { Switch, Route } from 'react-router-dom';
 
 import NavBar from "./components/NavBar/navBar_container"
-import HomePage from "./components/homePage_container";
+import HomePage from "./components/homepage/homePage_container";
 import LoginFormContainer from './components/session/login_form_container';
 import SignupFormContainer from './components/session/signup_form_container';
 import Wishlist from './components/wishlist/wishlist_container';
