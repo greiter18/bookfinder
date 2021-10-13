@@ -8,12 +8,14 @@ import LoginFormContainer from './components/session/login_form_container';
 import SignupFormContainer from './components/session/signup_form_container';
 import Wishlist from './components/wishlist/wishlist_container';
 import ReadBooks from './components/readbooks/readbooks_container';
+import Result from './components/homepage/results_container';
 
 const App = () => (
   <div>
      <NavBar/>
       <Switch>
         <Route exact path="/" component={HomePage}/>
+        <Route exact path="/result/:title" component={Result}/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/wishlist/" component={Wishlist} />

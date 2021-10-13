@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from "axios";
 import BookIndexItem from "./book_index_item";
 import Pagination from "../pagination";
+import { Link } from 'react-router-dom'
 
 
 const HomePage = ({currentUser, addBook, addReadBook}) => {
@@ -10,6 +11,7 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
 	const [totalBooks, setTotalBooks] = useState(0);
 	const [totalBooksShown, setTotalBooksShown] = useState(10);
 	const [currentPage, setCurrentPage] = useState(0);
+  let newBooks = book.split(" ").join("+");
 
 	const handleChange = (event) => { //event - when a user does something
 		setBook(event.target.value);
@@ -50,6 +52,7 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
           <label className="searchBox">
             <input  type="text" onChange={handleChange} placeholder="Book Title" />
           </label>
+          <Link to={`/result/${newBooks}?search=batman`}>Find Book</Link>
           <button className="searchButton" >Find Book</button> {/* this is going to be a link {/search/searchbox} */}
         </form>
       </div>
