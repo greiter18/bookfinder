@@ -4,8 +4,9 @@ import HomePage from "./homePage";
 import {add_Book} from "../../actions/wishlist_action"
 import {addReadBook} from "../../actions/readbooks_actions"
 
-const mstp = store => ({
-  currentUser: store.session.user 
+const mstp = (store, ownProps) => ({
+  currentUser: store.session.user,
+  history: ownProps.history, 
 })
 
 const mdtp = dispatch => ({

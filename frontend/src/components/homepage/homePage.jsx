@@ -5,7 +5,7 @@ import Pagination from "../pagination";
 import { Link } from 'react-router-dom'
 
 
-const HomePage = ({currentUser, addBook, addReadBook}) => {
+const HomePage = ({currentUser, addBook, addReadBook , history}) => {
 	const [book, setBook] = useState("");
 	const [bookList, setBookList] = useState([]);
 	const [totalBooks, setTotalBooks] = useState(0);
@@ -44,16 +44,25 @@ const HomePage = ({currentUser, addBook, addReadBook}) => {
 		return <li> <BookIndexItem book={book.volumeInfo} key={book.id} bookId={book.id} currentUser={currentUser} addBook={addBook} addReadBook={addReadBook}/> </li>
 	});
 
+  const handleClick = () => {
+    history.push({
+      pathname: '/result',
+      search: newBooks
+    })
+  }
+
 	return (
 		<div>
       <div className="mainPageSearch">
+        {console.log('history',history)}
         <form onSubmit={handleSubmit} className="bookForm">
           <p className="mainTitle">What book do you want find?</p> 
           <label className="searchBox">
             <input  type="text" onChange={handleChange} placeholder="Book Title" />
           </label>
+          <button className="searchButton" onClick={() => handleClick()}>Find Book</button>
           <Link to={`/result/${newBooks}?search=batman`}>Find Book</Link>
-          <button className="searchButton" >Find Book</button> {/* this is going to be a link {/search/searchbox} */}
+          {/* <button className="searchButton" >Find Book</button> this is going to be a link {/search/searchbox} */}
         </form>
       </div>
       <ul>
