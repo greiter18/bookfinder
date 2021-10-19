@@ -15,11 +15,7 @@ const HomePage = ({currentUser, addBook, addReadBook , history}) => {
 		setBook(event.target.value);
 	};
 
-  // const options = {
-  // headers: {
-  //   common: null
-  //   }
-  // };
+ 
 
 	// const findBooks = (book) => {
 	// 	let newBooks = book.split(" ").join("+");
