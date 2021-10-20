@@ -1,4 +1,5 @@
 import React from 'react';
+import BookModal from './book_modal'
 
 const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
   const authors = book?.authors?.join(", ");
@@ -26,6 +27,11 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
     }
   }
 
+  const openModal = () => {
+    document.querySelector('.modal').classList.toggle('open-modal');
+    document.querySelector('.modal-background').classList.toggle('open-modal');
+  }
+
 	return (
 		<div className="book_item">
       <a href={book.infoLink} className='mainbookimageA' target="_blank" rel="noopener noreferrer">
@@ -34,7 +40,13 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
       <div className="bookiteminfo">
         <h2 className="mainbooktitle">{book.title}</h2>
         <h3>By {authors}</h3>
-        <p>{book.description}</p>
+        <div className="modal-background"  onClick={() => openModal()}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            More...
+            <BookModal description={book.description}/>
+          </div>
+        </div>
+        {/* <p>{book.description}</p> */}
         {/* <button  onClick={() => addBook({bookId, currentUser})}>Add to wishlist</button> */}
         {addToWishlist()}
         {addToReadBooks()}
