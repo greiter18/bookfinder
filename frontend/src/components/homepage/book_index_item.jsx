@@ -41,7 +41,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
         <h2 className="mainbooktitle">{book.title}</h2>
         <h3>By {authors}</h3>
         <p onClick={() => openModal()}> More</p>
-        <div className="modal-background"  onClick={() => openModal()}>
+        <div className="modal-background">
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <BookModal description={book.description}/>
           </div>
