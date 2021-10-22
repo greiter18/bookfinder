@@ -8,7 +8,8 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
     authors: authors,
     image: book.imageLinks?.thumbnail, 
     link: book?.infoLink,
-    bookId: bookId
+    bookId: bookId, currentUser,
+    description: book.description
     }
 
   const addToWishlist = () => {
@@ -27,9 +28,10 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
     }
   }
 
-  const openModal = () => {
-    document.querySelector('.modal').classList.toggle('open-modal');
-    document.querySelector('.modal-background').classList.toggle('open-modal');
+  const toggleModal = (bookId) => {
+    debugger
+    document.getElementById(`modal-background-${bookId}`).classList.toggle('open-modal');  
+    document.getElementById(`modal-${bookId}`).classList.toggle('open-modal');
   }
 
 	return (
@@ -40,10 +42,10 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
       <div className="bookiteminfo">
         <h2 className="mainbooktitle">{book.title}</h2>
         <h3>By {authors}</h3>
-        <p onClick={() => openModal()}> More</p>
-        <div className="modal-background">
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <BookModal description={book.description}/>
+        <p onClick={() => toggleModal(bookId)}> More</p>
+        <div className="modal-background"  onClick={() => toggleModal(bookId)} id={`modal-background-${bookId}`}>
+          <div className="modal" onClick={(e) => e.stopPropagation()} id={`modal-${bookId}`}> 
+            <BookModal description={book.description} />
           </div>
         </div>
         {/* <p>{book.description}</p> */}
