@@ -34,7 +34,7 @@ const Result = ({history, addReadBook, addBook, currentUser, mainhistory, ownPro
   };
 
   const list = bookList.map((book) => {
-    return <li> <BookIndexItem 
+    return <li className='booklisteach'> <BookIndexItem 
     book={book.volumeInfo} key={book.id} bookId={book.id}
     currentUser={currentUser} addBook={addBook} addReadBook={addReadBook}/></li>
   })
@@ -45,7 +45,7 @@ const Result = ({history, addReadBook, addBook, currentUser, mainhistory, ownPro
       {/* {console.log('results------',results)}
       {console.log('history------',mainhistory)}
       {console.log('ownProps------',ownProps)} */}
-      <ul><div id='content'>{list}</div></ul>
+      <ul className="booklist"><div id='content'>{list}</div></ul>
       
     </div>
   )

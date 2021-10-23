@@ -1,16 +1,20 @@
 .modal{
   display: none;
-  background-color: white;
-  position: relative;
-  /* right: 5%; */
-  /* bottom: 50%; */
-  width: 19%;
-  /* margin-right: 16px; */
-  /* margin-top: 124px; */
-  padding: 24px;
-  left: 77%;
-  top: 21%;
+  background-color: rgb(251,251,231);;
+  // width: 19%;
+  width:60%;
   border-radius: 4px;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: rgb(50, 39, 19) 1px solid;
+  border-radius: 11px;
+  padding: 1em;
+  color: rgb(50, 39, 19);
+  box-shadow: 5px 10px rgb(50, 39, 19);
 }
 
 .modal-background {
@@ -27,4 +31,12 @@
 .open-modal{
   display:block;
   z-index: 10;
+}
+
+.more:hover{
+  cursor: pointer;
+}
+
+.more{
+  color: blue;
 }
