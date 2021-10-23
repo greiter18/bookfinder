@@ -14,7 +14,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
 
   const addToWishlist = () => {
     if(currentUser?.id){
-      return (<button  onClick={() => addBook(bookInfo, currentUser)}>Add to wishlist</button>)
+      return (<button className="addButtons" onClick={() => addBook(bookInfo, currentUser)}>Add to wishlist</button>)
     } else {
       return '';
     }
@@ -22,7 +22,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
 
   const addToReadBooks = () => {
     if(currentUser?.id){
-      return (<button onClick={() => addReadBook(bookInfo)}>Read</button>)
+      return (<button className="addButtons" onClick={() => addReadBook(bookInfo)}>Read</button>)
     } else {
       return ''
     }
@@ -50,8 +50,8 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
         </div>
         {/* <p>{book.description}</p> */}
         {/* <button  onClick={() => addBook({bookId, currentUser})}>Add to wishlist</button> */}
-        {addToWishlist()}
-        {addToReadBooks()}
+          {addToWishlist()}
+          {addToReadBooks()}
       </div>
 		</div>
 	);

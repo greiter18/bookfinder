@@ -1,3 +1,6 @@
+$brownish:(rgb(50, 39, 19));
+$beigeish:(rgb(251,251,231));
+
 .booklist{
   display: flex;
   flex-direction: column;
@@ -38,6 +41,7 @@
 .mainbookimageA{
   // border: 3px solid red;
   height: 7em;
+  padding-right: 2em;
 }
 
 // .mainbookimageA a{
@@ -45,3 +49,17 @@
 //   border: 3px solid red;
 //   margin:auto
 // }
+
+.addButtons{
+  background-color: $beigeish;
+  border-radius: 3px;
+  padding: 3px;
+  width: 9em;
+  margin-top: .5em;
+}
+
+.addButtons:hover{
+  cursor: pointer;
+  color: $beigeish;
+  background-color: $brownish;
+}
