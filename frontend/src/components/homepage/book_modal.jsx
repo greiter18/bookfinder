@@ -1,6 +1,6 @@
 import React, {} from 'react'
 
-const Modal = ({description, title, authors, currentUser, readAdd, wishAdd}) => {
+const Modal = ({description, title, authors, currentUser, readAdd, wishAdd, bookInfo}) => {
 
    const addToWishlist = () => {
     if(currentUser?.id){

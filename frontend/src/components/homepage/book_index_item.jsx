@@ -48,6 +48,7 @@ const BookIndexItem = ({ book, addBook, bookId, currentUser, addReadBook }) => {
             <BookModal title={book.title} authors={authors} 
             description={book.description} wishAdd={addBook} 
             readAdd={addReadBook} currentUser={currentUser}
+            bookInfo={bookInfo}
             />
           </div>
         </div>

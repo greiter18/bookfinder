@@ -42,11 +42,7 @@ const Result = ({history, addReadBook, addBook, currentUser, mainhistory, ownPro
   return (
     <div>
       <Homepage/>
-      {/* {console.log('results------',results)}
-      {console.log('history------',mainhistory)}
-      {console.log('ownProps------',ownProps)} */}
       <ul className="booklist"><div id='content'>{list}</div></ul>
-      
     </div>
   )
 };
