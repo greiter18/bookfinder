@@ -17,7 +17,7 @@ const Modal = ({description, title, authors, currentUser, readAdd, wishAdd, book
       return ''
     }
   }
-
+  //
   return (
     <div>
       <p>{title} by {authors}</p> 
