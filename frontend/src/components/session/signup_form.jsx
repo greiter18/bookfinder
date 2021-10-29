@@ -59,12 +59,13 @@ const SignupForm =({signup , errors}) => {
   // }
 
     return (
-      <div className="signup-form-container">
+      <div className="loginbackground">
+        <div className="loginMain">
         <h1>
           Sign Up Page
         </h1>
-         <form onSubmit={handleSubmit}>
-          <div className="signup-form">
+         <form onSubmit={handleSubmit} className="loginform">
+          <div className="logininputs">
             <br/>
               <input type="text"
                 value={email}
@@ -88,7 +89,8 @@ const SignupForm =({signup , errors}) => {
             <input type="submit" value="Sign Up" />
             {/* {renderErrors()} */}
           </div>
-        </form>  
+        </form> 
+        </div> 
       </div>
     );
 }
