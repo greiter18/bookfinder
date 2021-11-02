@@ -6,35 +6,6 @@ const SignupForm =({signup , errors}) => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 
-  // const useState = (def) => {
-  //   let state = { newValue: def };
-  //   const someFunction = (something) => {
-  //     return state.newValue = something;
-  //   }
-    
-  //   return [state.newValue ,someFunction];
-  // }
-	
-  useEffect(() => {
-    console.log('email', email)
-    // console.log('username',username)
-    // console.log('password',password)
-    console.log('effect is working')
-    },[email])// checking if the dependency / state changes - or whatever has changed
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.signedIn === true) {
-  //     this.props.history.push('/login');
-  //   }
-  //   this.setState({errors: nextProps.errors})
-  // }
-
-  // const update = (field) => {
-  //   return e => this.setState({
-  //     [field]: e.currentTarget.value
-  //   });
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     let user = {
@@ -59,13 +30,13 @@ const SignupForm =({signup , errors}) => {
   // }
 
     return (
-      <div className="loginbackground">
-        <div className="loginMain">
+      <div className="sessionbackground">
+        <div className="sessionMain">
         <h1>
           Sign Up Page
         </h1>
-         <form onSubmit={handleSubmit} className="loginform">
-          <div className="logininputs">
+         <form onSubmit={handleSubmit} className="sessionform">
+          <div className="sessioninputs">
             <br/>
               <input type="text"
                 value={email}
@@ -84,7 +55,6 @@ const SignupForm =({signup , errors}) => {
                 onChange={(event) => setPassword(event.target.value)}
                 placeholder="Password"
               />
-            <br/>
             <br/>
             <input type="submit" value="Sign Up" />
             {/* {renderErrors()} */}

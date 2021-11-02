@@ -46,13 +46,13 @@ const LoginForm = ({login, errors}) => {
   }
 
     return (
-      <div className="loginbackground">
-        <div className="loginMain">
+      <div className="sessionbackground">
+        <div className="sessionMain">
           <h1>  
             Sign in to Bookfinder
           </h1>
-          <form onSubmit={handleSubmit} className="loginform">
-            <div className="logininputs">
+          <form onSubmit={handleSubmit} className="sessionform">
+            <div className="sessioninputs">
                 <input type="text"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
@@ -65,9 +65,9 @@ const LoginForm = ({login, errors}) => {
                   placeholder="Password"
                 />
               <br/>
-              </div>
               <input type="submit" value="Log In" />
               {renderErrors()}
+            </div>
           </form>
         </div>
       </div>

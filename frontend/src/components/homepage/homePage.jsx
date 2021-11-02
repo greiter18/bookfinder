@@ -39,14 +39,12 @@ const HomePage = ({currentUser, addBook, addReadBook , history}) => {
 	return (
 		<div>
       <div className="mainPageSearch">
-        {/* {console.log('history',history)} */}
         <form className="bookForm">
           <p className="mainTitle">What book do you want find?</p> 
           <label className="searchBox">
             <input  type="text" onChange={handleChange} placeholder="Book Title" />
           </label>
           <button className="searchButton" onClick={() => handleClick()}>Find Book</button>
-          {/* <button className="searchButton" >Find Book</button> this is going to be a link {/search/searchbox} */}
         </form>
       </div>
       {/* <ul>
