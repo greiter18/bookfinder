@@ -17,17 +17,17 @@ const SignupForm =({signup , errors}) => {
     signup(user); //prop being passed
   }
 
-  // const renderErrors = () => {
-  //   return(
-  //     <ul>
-  //       {Object?.keys(errors)?.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {errors[error]}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  const renderErrors = () => {
+    return(
+      <ul>
+        {Object?.keys(errors)?.map((error, i) => (
+          <li key={`error-${i}`}>
+            {errors[error]}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
     return (
       <div className="sessionbackground">
@@ -57,7 +57,7 @@ const SignupForm =({signup , errors}) => {
               />
             <br/>
             <input type="submit" value="Sign Up" />
-            {/* {renderErrors()} */}
+            {renderErrors()}
           </div>
         </form> 
         </div> 

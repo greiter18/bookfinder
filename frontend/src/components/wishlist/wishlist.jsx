@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import WishlistIndexItem from './wishlist_index_item';
 
 //hf5f3r38P1cC - tester

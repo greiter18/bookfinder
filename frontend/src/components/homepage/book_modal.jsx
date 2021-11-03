@@ -1,6 +1,6 @@
 import React, {} from 'react'
 
-const Modal = ({description, title, authors, currentUser, readAdd, wishAdd, bookInfo}) => {
+const Modal = ({description, title, authors, currentUser, readAdd, wishAdd, bookInfo, readSwitch, wishSwitch}) => {
 
    const addToWishlist = () => {
     if(currentUser?.id){
@@ -17,14 +17,16 @@ const Modal = ({description, title, authors, currentUser, readAdd, wishAdd, book
       return ''
     }
   }
-  //
+
   return (
     <div>
       <p>{title} by {authors}</p> 
       <br />
       <p>{description}</p>
-      {addToWishlist()}
-      {addToReadBooks()}
+      {/* {addToWishlist()} */}
+      {readSwitch}
+      {wishSwitch}
+      {/* {addToReadBooks()} */}
     </div>
   )
 };

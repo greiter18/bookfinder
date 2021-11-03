@@ -3,7 +3,11 @@ import axios from "axios";
 import BookIndexItem from "./book_index_item";
 import Homepage from "./homePage_container";
 
-const Result = ({history, addReadBook, addBook, currentUser, mainhistory, ownProps}) => {
+const Result = ({
+  history, addReadBook, addBook, currentUser, 
+  mainhistory, ownProps, wishlist, readbooks,
+  deleteReadBook, remove_wish
+  }) => {
   const [bookList, setBookList] = useState([]);
 
   useEffect(() => {
@@ -36,7 +40,10 @@ const Result = ({history, addReadBook, addBook, currentUser, mainhistory, ownPro
   const list = bookList.map((book) => {
     return <li className='booklisteach'> <BookIndexItem 
     book={book.volumeInfo} key={book.id} bookId={book.id}
-    currentUser={currentUser} addBook={addBook} addReadBook={addReadBook}/></li>
+    currentUser={currentUser} addBook={addBook} addReadBook={addReadBook} 
+    wishlist={wishlist} readbooks={readbooks} remove_wish={remove_wish}
+    deleteReadBook={deleteReadBook}
+    /></li>
   })
 
   return (

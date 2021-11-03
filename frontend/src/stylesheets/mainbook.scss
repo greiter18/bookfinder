@@ -15,10 +15,16 @@ $beigeish:(rgb(251,251,231));
 
 .book_item{
   display: flex;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  width: 542px;
+  word-wrap: break-word;
  }
 
 .mainbooktitle{
   font-weight: 900;
+  word-wrap: normal;
 }
 
 .bookiteminfo{
@@ -62,4 +68,12 @@ $beigeish:(rgb(251,251,231));
   cursor: pointer;
   color: $beigeish;
   background-color: $brownish;
+}
+
+.addButtons:disabled{
+  background-color: red;
+}
+
+.bookdescription{
+  word-wrap: break-word;;
 }

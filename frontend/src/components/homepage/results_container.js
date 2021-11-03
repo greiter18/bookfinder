@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { withRouter } from 'react-router';
 import Result from './results';
-import {add_Book} from "../../actions/wishlist_action"
-import {addReadBook} from "../../actions/readbooks_actions"
+import {add_Book, remove_book} from "../../actions/wishlist_action"
+import {addReadBook, deleteReadBook} from "../../actions/readbooks_actions"
 
 const mstp = (store, ownProps) => ({
   //ownProps = only access in mstp
@@ -11,12 +11,16 @@ const mstp = (store, ownProps) => ({
   mainhistory: ownProps.history, 
   ownProps: ownProps,
   currentUser: store.session.user,
+  readbooks: Object?.values(store.readbooks).map(book => book.book_id),
+  wishlist:Object?.values(store.wishlists).map(book => book.book_id)
 
 })
 
 const mdtp = dispatch => ({
  addBook: (book, currentUser) => dispatch(add_Book(book, currentUser)),
- addReadBook: (book) => dispatch(addReadBook(book))
+ addReadBook: (book) => dispatch(addReadBook(book)),
+ remove_wish: id => dispatch(remove_book(id)),
+ deleteReadBook: readBook_id => dispatch(deleteReadBook(readBook_id))
 
 })
 
