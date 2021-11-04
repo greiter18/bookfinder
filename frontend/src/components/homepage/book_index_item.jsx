@@ -3,7 +3,8 @@ import BookModal from './book_modal'
 
 const BookIndexItem = ({ 
   book, addBook, bookId, currentUser, addReadBook , 
-  readbooks, wishlist, deleteReadBook , remove_wish
+  readbooks, wishlist, deleteReadBook , remove_wish,
+  readbooksSlice, wishListSlice
   }) => {
   const authors = book?.authors?.join(", ");
   const bookInfo = {
@@ -18,8 +19,13 @@ const BookIndexItem = ({
   const wishSwitch = () => {
     if (currentUser?.id){
       if (wishlist.includes(bookId)){
-        return (<button className="addButtons" onClick={() => remove_wish(bookId)}>Remove from Wishlist</button> )
-      } else {
+        return (<button className="addButtons" onClick={() => remove_wish(book._id)}>Remove from Wishlist</button> )
+      } else if (readbooks.includes(bookId)){
+        let read = readbooksSlice.filter(readbook => readbook.book_id === bookId )
+        console.log('read-------',read)
+        debugger
+        return (<button className="addButtons" onClick={() => deleteReadBook(read[0]._id).then(addBook(bookInfo, currentUser))}> Switch to Wishlist</button> )
+      }else {
         return (<button className="addButtons" onClick={() => addBook(bookInfo, currentUser)}>Add to Wishlist</button>)
       }
     } else {
@@ -29,7 +35,12 @@ const BookIndexItem = ({
   const readSwitch = () => {
     if (currentUser?.id){
       if (readbooks.includes(bookId)){
-        return (<button className="addButtons" onClick={() => deleteReadBook(bookId)} >Remove from Readbooks</button> )
+        return (<button className="addButtons" onClick={() => deleteReadBook(book._id)} >Remove from Readbooks</button> )
+      } else if (wishlist.includes(bookId)){
+        let wishbook = wishListSlice.filter(wish => wish.book_id === bookId )
+        console.log('wishhh-------',wishbook)
+        debugger
+        return (<button className="addButtons" onClick={() => remove_wish(wishbook[0]._id).then(addReadBook(bookInfo, currentUser))}> Switch to Readbooks</button> )
       } else {
         return (<button className="addButtons" onClick={() => addReadBook(bookInfo, currentUser)}>Add to Readbooks</button>)
       }
@@ -74,7 +85,7 @@ const BookIndexItem = ({
 			</a>
       <div className="bookiteminfo">
         <h2 className="mainbooktitle">{book.title} By {authors}</h2>
-
+        <br />
         {/* <p onClick={() => toggleModal(bookId)} className="more">More...</p> */}
         {shortDescription(book.description)}
         <div className="modal-background"  onClick={() => toggleModal(bookId)} id={`modal-background-${bookId}`}>

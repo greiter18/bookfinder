@@ -2,21 +2,21 @@ import React, {} from 'react'
 
 const Modal = ({description, title, authors, currentUser, readAdd, wishAdd, bookInfo, readSwitch, wishSwitch}) => {
 
-   const addToWishlist = () => {
-    if(currentUser?.id){
-      return (<button className="addButtons" onClick={() => wishAdd(bookInfo, currentUser)}>Add to wishlist</button>)
-    } else {
-      return '';
-    }
-  }
+  //  const addToWishlist = () => {
+  //   if(currentUser?.id){
+  //     return (<button className="addButtons" onClick={() => wishAdd(bookInfo, currentUser)}>Add to wishlist</button>)
+  //   } else {
+  //     return '';
+  //   }
+  // }
 
-  const addToReadBooks = () => {
-    if(currentUser?.id){
-      return (<button className="addButtons" onClick={() => readAdd(bookInfo)}>Read</button>)
-    } else {
-      return ''
-    }
-  }
+  // const addToReadBooks = () => {
+  //   if(currentUser?.id){
+  //     return (<button className="addButtons" onClick={() => readAdd(bookInfo)}>Read</button>)
+  //   } else {
+  //     return ''
+  //   }
+  // }
 
   return (
     <div>
@@ -24,8 +24,10 @@ const Modal = ({description, title, authors, currentUser, readAdd, wishAdd, book
       <br />
       <p>{description}</p>
       {/* {addToWishlist()} */}
-      {readSwitch}
-      {wishSwitch}
+      <div>
+        {readSwitch}
+        {wishSwitch}
+      </div>
       {/* {addToReadBooks()} */}
     </div>
   )

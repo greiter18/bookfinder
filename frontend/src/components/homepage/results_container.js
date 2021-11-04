@@ -12,6 +12,8 @@ const mstp = (store, ownProps) => ({
   ownProps: ownProps,
   currentUser: store.session.user,
   readbooks: Object?.values(store.readbooks).map(book => book.book_id),
+  readbooksSlice: store.readbooks,
+  wishListSlice: store.wishlists,
   wishlist:Object?.values(store.wishlists).map(book => book.book_id)
 
 })

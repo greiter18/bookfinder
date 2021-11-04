@@ -6,7 +6,7 @@ import Homepage from "./homePage_container";
 const Result = ({
   history, addReadBook, addBook, currentUser, 
   mainhistory, ownProps, wishlist, readbooks,
-  deleteReadBook, remove_wish
+  deleteReadBook, remove_wish, readbooksSlice, wishListSlice
   }) => {
   const [bookList, setBookList] = useState([]);
 
@@ -37,12 +37,13 @@ const Result = ({
 		);
   };
 
-  const list = bookList.map((book) => {
-    return <li className='booklisteach'> <BookIndexItem 
+  const list = bookList.map((book , i) => {
+    return <li className='booklisteach'> <BookIndexItem
+    key={{i}} 
     book={book.volumeInfo} key={book.id} bookId={book.id}
     currentUser={currentUser} addBook={addBook} addReadBook={addReadBook} 
     wishlist={wishlist} readbooks={readbooks} remove_wish={remove_wish}
-    deleteReadBook={deleteReadBook}
+    deleteReadBook={deleteReadBook} readbooksSlice={readbooksSlice} wishListSlice={wishListSlice}
     /></li>
   })
 

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 
 const WishlistIndexItem = ({book, removeBook, addReadBook}) => {
 
@@ -9,7 +9,7 @@ const WishlistIndexItem = ({book, removeBook, addReadBook}) => {
         Title: {book.title}
         Author: {book.author}
       </div>
-      <a href={book.link} target="_blank" className='mainbookimageA'>
+      <a href={book.link} target="_blank" className='mainbookimageA' rel="noreferrer">
        <img src={book?.image} alt={book?.title} className="mainbookimage" />
       </a>
       <div>
