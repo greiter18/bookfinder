@@ -5,7 +5,7 @@ const NavBar = ({
   logout, loggedIn, user, currentUser, store, fetchWishlist, fetchReadBooks
   }) => {
 
-  // const [wishlist, setWishlist] = useState(store.wishlists);
+
   // const [readbook, setReadbook] = useState(store.readbooks);
   // const [ourUser, setOurUser] = useState(currentUser);
   
