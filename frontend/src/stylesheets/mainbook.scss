@@ -68,15 +68,16 @@ $beigeish:(rgb(251,251,231));
   margin-right: 15em;
 }
 
+.addButtons:disabled:hover{
+  cursor: not-allowed;;
+}
+
 .addButtons:hover{
   cursor: pointer;
   color: $beigeish;
   background-color: $brownish;
 }
 
-.addButtons:disabled{
-  background-color: red;
-}
 
 .bookdescription{
   word-wrap: break-word;;

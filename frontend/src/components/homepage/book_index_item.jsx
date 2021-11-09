@@ -19,12 +19,12 @@ const BookIndexItem = ({
   const wishSwitch = () => {
     if (currentUser?.id){
       if (wishlist.includes(bookId)){
-        return (<button className="addButtons" onClick={() => remove_wish(book._id)}>Remove from Wishlist</button> )
-      } else if (readbooks.includes(bookId)){
-        let read = readbooksSlice.filter(readbook => readbook.book_id === bookId )
-        console.log('read-------',read)
-        debugger
-        return (<button className="addButtons" onClick={() => deleteReadBook(read[0]._id).then(addBook(bookInfo, currentUser))}> Switch to Wishlist</button> )
+        return (<button className="addButtons" onClick={() => remove_wish(book._id)} disabled={true}> <i class="fas fa-check"></i>Add to Wishlist</button> )
+      // } else if (readbooks.includes(bookId)){
+      //   let read = readbooksSlice.filter(readbook => readbook.book_id === bookId )
+      //   console.log('read-------',read)
+      //   debugger
+      //   return (<button className="addButtons" onClick={() => deleteReadBook(read[0]._id).then(addBook(bookInfo, currentUser))}> Switch to Wishlist</button> )
       }else {
         return (<button className="addButtons" onClick={() => addBook(bookInfo, currentUser)}>Add to Wishlist</button>)
       }
@@ -35,12 +35,12 @@ const BookIndexItem = ({
   const readSwitch = () => {
     if (currentUser?.id){
       if (readbooks.includes(bookId)){
-        return (<button className="addButtons" onClick={() => deleteReadBook(book._id)} >Remove from Readbooks</button> )
-      } else if (wishlist.includes(bookId)){
-        let wishbook = wishListSlice.filter(wish => wish.book_id === bookId )
-        console.log('wishhh-------',wishbook)
-        debugger
-        return (<button className="addButtons" onClick={() => remove_wish(wishbook[0]._id).then(addReadBook(bookInfo, currentUser))}> Switch to Readbooks</button> )
+        return (<button className="addButtons" onClick={() => deleteReadBook(book._id)} disabled={true}> <i class="fas fa-check"></i> Add to Readbooks</button> )
+      // } else if (wishlist.includes(bookId)){
+      //   // let wishbook = wishListSlice.filter(wish => wish.book_id === bookId )
+      //   // console.log('wishhh-------',wishbook)
+      //   debugger
+      //   return (<button className="addButtons" onClick={() => remove_wish(wishbook[0]._id).then(addReadBook(bookInfo, currentUser))}> Switch to Readbooks</button> )
       } else {
         return (<button className="addButtons" onClick={() => addReadBook(bookInfo, currentUser)}>Add to Readbooks</button>)
       }
