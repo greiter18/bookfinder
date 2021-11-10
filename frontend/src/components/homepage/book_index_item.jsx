@@ -84,7 +84,7 @@ const BookIndexItem = ({
 				<img className="mainbookimage" src={book.imageLinks?.thumbnail} alt={book.title} />
 			</a>
       <div className="bookiteminfo">
-        <h2 className="mainbooktitle">{book.title} By {authors}</h2>
+        <h2> <span className="mainbooktitle">{book.title} </span>By <span className="mainbooktitle">{authors}</span></h2>
         <br />
         {/* <p onClick={() => toggleModal(bookId)} className="more">More...</p> */}
         {shortDescription(book.description)}

@@ -19,8 +19,8 @@ const Modal = ({description, title, authors, currentUser, readAdd, wishAdd, book
   // }
 
   return (
-    <div>
-      <p>{title} by {authors}</p> 
+    <div className="bookModal">
+      <p><span className="mainbooktitle">{title}</span> by <span className="mainbooktitle">{authors}</span></p> 
       <br />
       <p>{description}</p>
       {/* {addToWishlist()} */}

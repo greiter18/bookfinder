@@ -2,7 +2,7 @@
   display: none;
   background-color: rgb(251,251,231);;
   // width: 19%;
-  width:60%;
+  width:45%;
   border-radius: 4px;
   margin: 0;
   position: relative;
@@ -39,4 +39,10 @@
 
 .more{
   color: blue;
+}
+
+.bookModal{
+  display : flex;
+  flex-direction: column;
+  align-items: center;
 }
