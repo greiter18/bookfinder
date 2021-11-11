@@ -6,6 +6,7 @@ const ReadBooksIndexItem = ({book , deleteReadBook}) => {
 
   return(
     <div className="readBook">
+      {console.log(book)}
       <div className="readImage">
         <a href={book.link} target="_blank" className='mainbookimageA'>
         <img src={book?.image} alt={book?.title} className="mainbookimage"/>

@@ -16,8 +16,7 @@ const Wishlist = ({addReadBook,currentUser, wishlists, fetchWishlist, remove_boo
   return (
     <div>
       <h1>Wishlist page</h1>  
-      <ul> {setWishlist} </ul>
-      
+      <ul className="wishlist"> {setWishlist} </ul> 
     </div>
   )
 }

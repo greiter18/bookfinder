@@ -1,0 +1,32 @@
+.wishlist{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wishListItem{
+  display: flex;
+  align-items: center;
+  width: 542px;
+  word-wrap: break-word;
+  margin-bottom: 2em;
+}
+
+.wishListItemMain{
+  display: flex;
+}
+
+.wishListItemDetails{
+  // display: flex;
+  // flex-direction: column;
+}
+
+.wishListItemright{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around
+}
+
+.wishbookinfo{
+  font-weight: bold;
+}
