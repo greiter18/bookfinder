@@ -5,8 +5,10 @@
   font-size: 25px;
   border-bottom: 1px black solid;
   padding-bottom: 2%;
-  position: sticky;
-  position: -webkit-sticky;
+  // position: fixed;
+  top: 0px;
+  width: 100%; 
+  left: 0;
 }
 
 .mainHeading{

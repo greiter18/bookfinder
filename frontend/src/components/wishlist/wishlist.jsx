@@ -13,9 +13,14 @@ const Wishlist = ({addReadBook,currentUser, wishlists, fetchWishlist, remove_boo
     return <li>  <WishlistIndexItem book={book} removeBook={remove_book} addReadBook={addReadBook}/> </li>
   })
 
+  const wishlistCount = () => {
+    return wishlists.length
+  }
+
   return (
     <div>
-      <h1>Wishlist page</h1>  
+      {console.log('wishlistsssss',wishlists)}
+      <h1>Your Wishlist ({wishlistCount()})</h1>  
       <ul className="wishlist"> {setWishlist} </ul> 
     </div>
   )

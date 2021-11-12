@@ -2,8 +2,6 @@
 //   display: flex;
   
 // }
-
-
 // [type|="radio"] {
 //   background-color: red;
 //   border: none;
@@ -16,6 +14,12 @@
 // .off {
 //   color: #ccc;
 // }
+
+.readBooks{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .star{
   display: flex;
 }
@@ -24,6 +28,9 @@
 }
 .readBook{
   display: flex;
+  margin-bottom: 2em;
+  width: 542px;
+  word-wrap: break-word;
   // flex-direction:column;
   // align-items: center;
   // justify-content:space-around
@@ -34,14 +41,12 @@
   flex-direction: column;
 }
 
-
 .readBookInfo{
   display: flex;
   flex-direction: column;
 }
 
-
- #button{
+#button{
   background-color: transparent;
   border: none;
   outline: none;

@@ -12,6 +12,7 @@ import Result from './components/homepage/results_container';
 
 const App = () => (
   <div>
+    <div>
      <NavBar/>
       <Switch>
         <Route  exact path="/" component={HomePage}/>
@@ -24,6 +25,7 @@ const App = () => (
         <HomePage />  
       {/* will default to this page if none of the other routes match */}
       </Switch>
+      </div>
   </div>
 );
 

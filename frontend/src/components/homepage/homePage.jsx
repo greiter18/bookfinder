@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 // import axios from "axios";
 // import BookIndexItem from "./book_index_item";
 import Pagination from "../pagination";
+import NavBar from '../NavBar/navBar_container';
 
 const HomePage = ({currentUser, addBook, addReadBook , history}) => {
 	const [book, setBook] = useState("");
@@ -38,6 +39,7 @@ const HomePage = ({currentUser, addBook, addReadBook , history}) => {
 
 	return (
 		<div>
+      {/* <NavBar/> */}
       <div className="mainPageSearch">
         <form className="bookForm">
           <p className="mainTitle">What book do you want find?</p> 
