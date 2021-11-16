@@ -14,7 +14,7 @@ const WishlistIndexItem = ({book, removeBook, addReadBook}) => {
           </div>
           <div>
             <i class="fa fa-trash-o" aria-hidden="true" onClick={() => removeBook(book._id)}></i>
-            <button onClick={() => addReadBook(book).then(() => removeBook(book._id))}>Read</button>
+            <button onClick={() => addReadBook(book).then(() => removeBook(book._id))}>Put on Read List</button>
           </div>
         </div>
       </div>
