@@ -38,9 +38,8 @@ const HomePage = ({currentUser, addBook, addReadBook , history}) => {
   }
 
 	return (
-		<div>
-      {/* <NavBar/> */}
-      <div className="mainPageSearch">
+		<div className="mainPageSearch">
+      <div >
         <form className="bookForm">
           <p className="mainTitle">What book do you want find?</p> 
           <label className="searchBox">
