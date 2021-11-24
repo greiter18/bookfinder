@@ -17,7 +17,6 @@ passport.authenticate("jwt", { session: false }),
 // passport.authenticate("jwt", {session: false}),
 // (req, res) => {
 // debugger  
-
 // console.log('reqqqqqqqqqquserrrrrr',req.user)
 //   const newWishlist = new Wishlist({
 //     user_id: req.user.id,
