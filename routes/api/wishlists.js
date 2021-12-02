@@ -12,7 +12,6 @@ passport.authenticate("jwt", { session: false }),
       .catch((err) => res.status(400).json(err));
   }
 );
-
 // router.post("/",
 // passport.authenticate("jwt", {session: false}),
 // (req, res) => {
