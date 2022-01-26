@@ -78,7 +78,6 @@ const BookIndexItem = ({
     return (<p className='bookdescription '>{brief}<span onClick={() => toggleModal(bookId)} className="more"> More...</span></p>)
   }
 
-
 	return (
 		<div className="book_item">
       <a href={book.infoLink} className='mainbookimageA' target="_blank" rel="noopener noreferrer">
